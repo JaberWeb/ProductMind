@@ -140,8 +140,8 @@ export function Sidebar() {
               role="button"
               className="flex w-full cursor-pointer items-center gap-3 rounded-lg p-2 transition-colors hover:bg-slate-50"
             >
-              <div className="avatar placeholder">
-                <div className="w-9 rounded-full bg-indigo-100 text-xs font-semibold text-indigo-700">
+              <div className="avatar placeholder ">
+                <div className="w-9 rounded-full bg-indigo-100 text-xs font-semibold text-indigo-700 flex items-center justify-center">
                   <span>
                     {session?.user?.name?.charAt(0)?.toUpperCase() ||
                       session?.user?.email?.charAt(0)?.toUpperCase() ||
