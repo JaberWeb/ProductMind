@@ -4,14 +4,18 @@ import { signIn } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import { LogIn } from "lucide-react";
+import { LogIn, FlaskConical, Loader2 } from "lucide-react";
 import { PasswordInput } from "@/components/password-input";
+
+const DEMO_EMAIL = "molla.jaber@gmail.com";
+const DEMO_PASS = "molla.jaber@gmail.com";
 
 type FormData = { email: string; password: string };
 
 export default function LoginPage() {
   const router = useRouter();
   const [error, setError] = useState("");
+  const [demoLoading, setDemoLoading] = useState(false);
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<FormData>();
 
   const onSubmit = async (data: FormData) => {
@@ -22,6 +26,21 @@ export default function LoginPage() {
     });
     if (signInError) {
       setError(signInError.message || "Invalid email or password");
+      return;
+    }
+    router.push("/dashboard");
+  };
+
+  const handleDemoLogin = async () => {
+    setDemoLoading(true);
+    setError("");
+    const { error: signInError } = await signIn.email({
+      email: DEMO_EMAIL,
+      password: DEMO_PASS,
+    });
+    if (signInError) {
+      setError(signInError.message || "Demo login failed");
+      setDemoLoading(false);
       return;
     }
     router.push("/dashboard");
@@ -75,6 +94,29 @@ export default function LoginPage() {
             className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-indigo-600 px-5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-60"
           >
             {isSubmitting ? "Signing in…" : "Sign in"}
+          </button>
+
+          <div className="relative">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-slate-200" />
+            </div>
+            <div className="relative flex justify-center text-xs uppercase">
+              <span className="bg-white px-2 text-slate-400">or</span>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            onClick={handleDemoLogin}
+            disabled={demoLoading}
+            className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl border border-emerald-300 bg-emerald-50 px-5 text-sm font-semibold text-emerald-700 shadow-sm transition-all hover:bg-emerald-100 disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            {demoLoading ? (
+              <Loader2 className="h-4 w-4 animate-spin" />
+            ) : (
+              <FlaskConical className="h-4 w-4" />
+            )}
+            {demoLoading ? "Logging in…" : "Demo Login"}
           </button>
         </form>
 

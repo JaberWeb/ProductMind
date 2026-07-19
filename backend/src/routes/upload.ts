@@ -8,6 +8,8 @@ import { inferColumnsWithAI } from "../utils/gemini";
 
 const router = Router();
 
+const MAX_FILE_SIZE = 10_485_760;
+
 const NORMALIZED_FIELDS = [
   "orderId", "productName", "quantity", "price",
   "revenue", "date", "category", "customerEmail", "sourcePlatform",
@@ -29,6 +31,10 @@ router.post("/upload/preview", async (req: AuthRequest, res: any) => {
     if (!fileUrl) return res.status(400).json({ error: "fileUrl is required" });
 
     const buffer = await fetchFileBuffer(fileUrl);
+    if (buffer.byteLength > MAX_FILE_SIZE) {
+      return res.status(413).json({ error: "File too large. Maximum size is 10MB." });
+    }
+
     const ext = (fileName || fileUrl).toLowerCase();
     const isCsv = ext.endsWith(".csv");
     const isXlsx = ext.endsWith(".xlsx") || ext.endsWith(".xls");
@@ -87,6 +93,10 @@ router.post("/upload/confirm", async (req: AuthRequest, res: any) => {
     }
 
     const buffer = await fetchFileBuffer(fileUrl);
+    if (buffer.byteLength > MAX_FILE_SIZE) {
+      return res.status(413).json({ error: "File too large. Maximum size is 10MB." });
+    }
+
     const ext = (fileName || fileUrl).toLowerCase();
     const isCsv = ext.endsWith(".csv");
     const isXlsx = ext.endsWith(".xlsx") || ext.endsWith(".xls");
@@ -99,13 +109,24 @@ router.post("/upload/confirm", async (req: AuthRequest, res: any) => {
     const db = req.app.locals.db;
     const ownerId = req.user.id;
 
-    const documents = parsed.rows.map((row: Record<string, string>) => ({
-      ownerId,
-      sourceFile: fileName || fileUrl,
-      ...normalizeRow(row, mapping),
-      confidenceScore: null,
-      createdAt: new Date(),
-    }));
+    const documents = parsed.rows.map((row: Record<string, string>) => {
+      const normalized = normalizeRow(row, mapping);
+
+      if (normalized.date) {
+        const d = new Date(normalized.date);
+        if (!isNaN(d.getTime())) {
+          normalized.date = d as any;
+        }
+      }
+
+      return {
+        ownerId,
+        sourceFile: fileName || fileUrl,
+        ...normalized,
+        confidenceScore: null,
+        createdAt: new Date(),
+      };
+    });
 
     const result = await db.collection("items").insertMany(documents);
 

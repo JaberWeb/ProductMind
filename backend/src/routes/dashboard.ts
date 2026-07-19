@@ -9,25 +9,40 @@ router.get("/dashboard/stats", async (req: AuthRequest, res: any) => {
     const ownerId = req.user.id;
 
     const today = new Date();
-    const currentYm = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}`;
+    const monthStart = new Date(today.getFullYear(), today.getMonth(), 1);
+    const monthEnd = new Date(today.getFullYear(), today.getMonth() + 1, 1);
 
-    const [totalItems, itemsThisMonth, aiAgg] = await Promise.all([
-      db.collection("items").countDocuments({ ownerId }),
-      db.collection("items").countDocuments({ ownerId, date: { $regex: `^${currentYm}` } }),
-      db.collection("items")
-        .aggregate([
-          { $match: { ownerId } },
-          { $project: { count: { $size: { $ifNull: ["$generatedContent.history", []] } } } },
-          { $group: { _id: null, total: { $sum: "$count" } } },
-        ])
-        .toArray(),
-    ]);
+    const [result] = await db.collection("items")
+      .aggregate([
+        { $match: { ownerId } },
+        { $addFields: {
+          dateNorm: {
+            $cond: {
+              if: { $eq: [{ $type: "$date" }, "date"] },
+              then: "$date",
+              else: { $dateFromString: { dateString: { $ifNull: ["$date", ""] }, onError: null } },
+            },
+          },
+        }},
+        { $facet: {
+          totalItems: [{ $count: "count" }],
+          itemsThisMonth: [
+            { $match: { dateNorm: { $gte: monthStart, $lt: monthEnd } } },
+            { $count: "count" },
+          ],
+          aiSuggestions: [
+            { $project: { count: { $size: { $ifNull: ["$generatedContent.history", []] } } } },
+            { $group: { _id: null, total: { $sum: "$count" } } },
+          ],
+        }},
+      ])
+      .toArray();
 
     res.json({
-      totalItems,
-      activeItems: totalItems,
-      itemsThisMonth,
-      aiSuggestionsCount: aiAgg[0]?.total || 0,
+      totalItems: result.totalItems?.[0]?.count || 0,
+      activeItems: result.totalItems?.[0]?.count || 0,
+      itemsThisMonth: result.itemsThisMonth?.[0]?.count || 0,
+      aiSuggestionsCount: result.aiSuggestions?.[0]?.total || 0,
     });
   } catch (err: any) {
     console.error("Dashboard stats error:", err);

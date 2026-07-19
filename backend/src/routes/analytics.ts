@@ -4,166 +4,153 @@ import { callLLM } from "../utils/llm";
 
 const router = Router();
 
+function toDate(v: string): Date | null {
+  const d = new Date(v);
+  return isNaN(d.getTime()) ? null : d;
+}
+
 router.post("/analytics/stats", async (req: AuthRequest, res: any) => {
   try {
     const db = req.app.locals.db;
     const { dateFrom, dateTo, category, platform } = req.body;
 
-    const match: any = { ownerId: req.user.id };
-    if (dateFrom || dateTo) {
-      match.date = {};
-      if (dateFrom) match.date.$gte = dateFrom;
-      if (dateTo) match.date.$lte = dateTo;
-    }
-    if (category) match.category = category;
-    if (platform) match.sourcePlatform = platform;
-
     const today = new Date();
-    const currentYm = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}`;
+    const monthStart = new Date(today.getFullYear(), today.getMonth(), 1);
+    const monthEnd = new Date(today.getFullYear(), today.getMonth() + 1, 1);
 
-    const [
-      totalItems,
-      revenueAgg,
-      priceAgg,
-      itemsThisMonth,
-      topCategories,
-      topProducts,
-      itemsPerCategory,
-      pricingData,
-      categories,
-      platforms,
-    ] = await Promise.all([
-      db.collection("items").countDocuments(match),
-
-      db.collection("items")
-        .aggregate([
-          { $match: match },
-          {
-            $group: {
-              _id: null,
-              total: {
-                $sum: {
-                  $convert: { input: "$revenue", to: "double", onError: 0, onNull: 0 },
-                },
-              },
-            },
+    const pipeline: any[] = [
+      { $match: { ownerId: req.user.id } },
+      { $addFields: {
+        dateNorm: {
+          $cond: {
+            if: { $eq: [{ $type: "$date" }, "date"] },
+            then: "$date",
+            else: { $dateFromString: { dateString: { $ifNull: ["$date", ""] }, onError: null } },
           },
-        ])
-        .toArray(),
+        },
+      }},
+    ];
 
-      db.collection("items")
-        .aggregate([
-          { $match: match },
-          {
-            $group: {
-              _id: null,
-              avg: {
-                $avg: {
-                  $convert: { input: "$price", to: "double", onError: 0, onNull: 0 },
-                },
-              },
-            },
-          },
-        ])
-        .toArray(),
-
-      db.collection("items").countDocuments({ ...match, date: { $regex: `^${currentYm}` } }),
-
-      db.collection("items")
-        .aggregate([
-          { $match: { ...match, category: { $nin: ["", null] } } },
-          { $group: { _id: "$category", count: { $sum: 1 } } },
-          { $sort: { count: -1 } },
-          { $limit: 10 },
-        ])
-        .toArray(),
-
-      db.collection("items")
-        .aggregate([
-          { $match: { ...match, productName: { $nin: ["", null] } } },
-          {
-            $group: {
-              _id: "$productName",
-              revenue: {
-                $sum: {
-                  $convert: { input: "$revenue", to: "double", onError: 0, onNull: 0 },
-                },
-              },
-            },
-          },
-          { $sort: { revenue: -1 } },
-          { $limit: 10 },
-        ])
-        .toArray(),
-
-      db.collection("items")
-        .aggregate([
-          { $match: { ...match, category: { $nin: ["", null] } } },
-          { $group: { _id: "$category", count: { $sum: 1 } } },
-          { $sort: { count: -1 } },
-          { $limit: 10 },
-        ])
-        .toArray(),
-
-      db.collection("items")
-        .aggregate([
-          { $match: { ...match, price: { $nin: ["", null] } } },
-          {
-            $project: {
-              price: { $convert: { input: "$price", to: "double", onError: null, onNull: null } },
-            },
-          },
-          { $match: { price: { $ne: null } } },
-        ])
-        .toArray(),
-
-      db.collection("items").distinct("category", { ...match, category: { $nin: ["", null] } }),
-      db.collection("items").distinct("sourcePlatform", { ...match, sourcePlatform: { $nin: ["", null] } }),
-    ]);
-
-    const totalRevenue = Math.round((revenueAgg[0]?.total || 0) * 100) / 100;
-    const avgPrice = Math.round((priceAgg[0]?.avg || 0) * 100) / 100;
-
-    const buckets = [0, 10, 25, 50, 100, 250, 500, 1000, Infinity];
-    const bucketLabels = ["$0–$10", "$10–$25", "$25–$50", "$50–$100", "$100–$250", "$250–$500", "$500–$1K", "$1K+"];
-    const pricingDistribution = bucketLabels.map((range, i) => ({
-      range,
-      count: pricingData.filter((p: any) => {
-        const v = p.price;
-        return v >= buckets[i] && v < buckets[i + 1];
-      }).length,
-    }));
-
-    const rawItems = await db.collection("items")
-      .find(match, { projection: { date: 1, revenue: 1 } })
-      .toArray();
-
-    const monthlyRevenue: Record<string, number> = {};
-    for (const item of rawItems) {
-      const d = new Date(item.date as string);
-      if (!isNaN(d.getTime())) {
-        const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`;
-        monthlyRevenue[key] = (monthlyRevenue[key] || 0) + (parseFloat(item.revenue as string) || 0);
+    const facetMatch: any = {};
+    if (category) facetMatch.category = category;
+    if (platform) facetMatch.sourcePlatform = platform;
+    if (dateFrom || dateTo) {
+      facetMatch.dateNorm = {};
+      if (dateFrom) {
+        const d = toDate(dateFrom);
+        if (d) facetMatch.dateNorm.$gte = d;
+      }
+      if (dateTo) {
+        const d = toDate(dateTo);
+        if (d) {
+          const end = new Date(d);
+          end.setDate(end.getDate() + 1);
+          facetMatch.dateNorm.$lt = end;
+        }
       }
     }
 
-    const revenueOverTime = Object.entries(monthlyRevenue)
-      .sort(([a], [b]) => a.localeCompare(b))
-      .slice(-12)
-      .map(([month, revenue]) => ({ month, revenue: Math.round(revenue * 100) / 100 }));
+    if (Object.keys(facetMatch).length > 0) {
+      pipeline.push({ $match: facetMatch });
+    }
+
+    pipeline.push({
+      $facet: {
+        stats: [
+          { $group: {
+            _id: null,
+            totalItems: { $sum: 1 },
+            totalRevenue: { $sum: { $convert: { input: "$revenue", to: "double", onError: 0, onNull: 0 } } },
+            avgPrice: { $avg: { $convert: { input: "$price", to: "double", onError: 0, onNull: 0 } } },
+          }},
+        ],
+        topCategories: [
+          { $match: { category: { $nin: ["", null] } } },
+          { $group: { _id: "$category", count: { $sum: 1 } } },
+          { $sort: { count: -1 } },
+          { $limit: 10 },
+        ],
+        topProducts: [
+          { $match: { productName: { $nin: ["", null] } } },
+          { $group: {
+            _id: "$productName",
+            revenue: { $sum: { $convert: { input: "$revenue", to: "double", onError: 0, onNull: 0 } } },
+          }},
+          { $sort: { revenue: -1 } },
+          { $limit: 10 },
+        ],
+        pricingBuckets: [
+          { $match: { price: { $nin: ["", null] } } },
+          { $project: {
+            priceNum: { $convert: { input: "$price", to: "double", onError: null, onNull: null } },
+          }},
+          { $match: { priceNum: { $ne: null } } },
+          { $bucket: {
+            groupBy: "$priceNum",
+            boundaries: [0, 10, 25, 50, 100, 250, 500, 1000],
+            default: "1000+",
+            output: { count: { $sum: 1 } },
+          }},
+        ],
+        monthlyRevenue: [
+          { $match: { dateNorm: { $ne: null }, revenue: { $nin: ["", null] } } },
+          { $group: {
+            _id: { $dateToString: { format: "%Y-%m", date: "$dateNorm" } },
+            revenue: { $sum: { $convert: { input: "$revenue", to: "double", onError: 0, onNull: 0 } } },
+          }},
+          { $sort: { _id: 1 } },
+        ],
+        itemsThisMonth: [
+          { $match: { dateNorm: { $gte: monthStart, $lt: monthEnd } } },
+          { $count: "count" },
+        ],
+        categories: [
+          { $match: { category: { $nin: ["", null] } } },
+          { $group: { _id: "$category" } },
+        ],
+        platforms: [
+          { $match: { sourcePlatform: { $nin: ["", null] } } },
+          { $group: { _id: "$sourcePlatform" } },
+        ],
+      },
+    });
+
+    const [result] = await db.collection("items").aggregate(pipeline).toArray();
+
+    const stats = result.stats?.[0] || {};
+    const totalRevenue = Math.round((stats.totalRevenue || 0) * 100) / 100;
+    const avgPrice = Math.round((stats.avgPrice || 0) * 100) / 100;
+
+    const bucketLabels: Record<string, string> = {
+      "0": "$0–$10", "10": "$10–$25", "25": "$25–$50", "50": "$50–$100",
+      "100": "$100–$250", "250": "$250–$500", "500": "$500–$1K", "1000+": "$1K+",
+    };
+
+    const pricingDistribution = (result.pricingBuckets || []).map((b: any) => ({
+      range: bucketLabels[String(b._id)] || String(b._id),
+      count: b.count,
+    }));
+
+    const revenueOverTime = (result.monthlyRevenue || []).slice(-12).map((m: any) => ({
+      month: m._id,
+      revenue: Math.round(m.revenue * 100) / 100,
+    }));
 
     res.json({
-      totalItems,
+      totalItems: stats.totalItems || 0,
       totalRevenue,
       avgPrice,
-      itemsThisMonth,
-      topCategories: topCategories.map((c: any) => ({ category: c._id, count: c.count })),
-      topProducts: topProducts.map((p: any) => ({ productName: p._id, revenue: Math.round(p.revenue * 100) / 100 })),
+      itemsThisMonth: result.itemsThisMonth?.[0]?.count || 0,
+      topCategories: (result.topCategories || []).map((c: any) => ({ category: c._id, count: c.count })),
+      topProducts: (result.topProducts || []).map((p: any) => ({
+        productName: p._id,
+        revenue: Math.round(p.revenue * 100) / 100,
+      })),
       revenueOverTime,
-      itemsPerCategory: itemsPerCategory.map((c: any) => ({ category: c._id, count: c.count })),
+      itemsPerCategory: (result.topCategories || []).map((c: any) => ({ category: c._id, count: c.count })),
       pricingDistribution,
-      categories,
-      platforms,
+      categories: (result.categories || []).map((c: any) => c._id),
+      platforms: (result.platforms || []).map((p: any) => p._id),
     });
   } catch (err: any) {
     console.error("Analytics stats error:", err);
@@ -180,52 +167,86 @@ router.post("/analytics/insights", async (req: AuthRequest, res: any) => {
     const db = req.app.locals.db;
     const { dateFrom, dateTo, category, platform } = req.body;
 
-    const match: any = { ownerId: req.user.id };
-    if (dateFrom || dateTo) {
-      match.date = {};
-      if (dateFrom) match.date.$gte = dateFrom;
-      if (dateTo) match.date.$lte = dateTo;
-    }
-    if (category) match.category = category;
-    if (platform) match.sourcePlatform = platform;
+    const today = new Date();
+    const monthStart = new Date(today.getFullYear(), today.getMonth(), 1);
+    const monthEnd = new Date(today.getFullYear(), today.getMonth() + 1, 1);
 
-    const nonEmptyCategory = { ...match, category: { $nin: ["", null] } };
-    const nonEmptyProduct = { ...match, productName: { $nin: ["", null] } };
-    const nonEmptyPlatform = { ...match, sourcePlatform: { $nin: ["", null] } };
+    const pipeline: any[] = [
+      { $match: { ownerId: req.user.id } },
+      { $addFields: {
+        dateNorm: {
+          $cond: {
+            if: { $eq: [{ $type: "$date" }, "date"] },
+            then: "$date",
+            else: { $dateFromString: { dateString: { $ifNull: ["$date", ""] }, onError: null } },
+          },
+        },
+      }},
+    ];
+
+    const facetMatch: any = {};
+    if (category) facetMatch.category = category;
+    if (platform) facetMatch.sourcePlatform = platform;
+    if (dateFrom || dateTo) {
+      facetMatch.dateNorm = {};
+      if (dateFrom) {
+        const d = toDate(dateFrom);
+        if (d) facetMatch.dateNorm.$gte = d;
+      }
+      if (dateTo) {
+        const d = toDate(dateTo);
+        if (d) {
+          const end = new Date(d);
+          end.setDate(end.getDate() + 1);
+          facetMatch.dateNorm.$lt = end;
+        }
+      }
+    }
+
+    if (Object.keys(facetMatch).length > 0) {
+      pipeline.push({ $match: facetMatch });
+    }
 
     const convert = (field: string) => ({
       $convert: { input: `$${field}`, to: "double" as const, onError: 0, onNull: 0 },
     });
 
-    const [
-      totalItems,
-      totalRevenueAgg,
-      avgPriceAgg,
-      itemsThisMonth,
-      categoryBreakdown,
-      topProductsRevenue,
-      topProductsVolume,
-      lowPerformers,
-      platformRevenue,
-    ] = await Promise.all([
-      db.collection("items").countDocuments(match),
+    const nonEmptyCategory = { category: { $nin: ["", null] } };
+    const nonEmptyProduct = { productName: { $nin: ["", null] } };
+    const nonEmptyPlatform = { sourcePlatform: { $nin: ["", null] } };
 
+    const [facetResult, ...rest] = await Promise.all([
       db.collection("items")
-        .aggregate([{ $match: match }, { $group: { _id: null, total: { $sum: convert("revenue") } } }])
+        .aggregate([
+          ...pipeline,
+          { $facet: {
+            stats: [
+              { $group: {
+                _id: null,
+                totalItems: { $sum: 1 },
+                totalRevenue: { $sum: convert("revenue") },
+                avgPrice: { $avg: convert("price") },
+              }},
+            ],
+            monthlyRevenue: [
+              { $match: { dateNorm: { $ne: null }, revenue: { $nin: ["", null] } } },
+              { $group: {
+                _id: { $dateToString: { format: "%Y-%m", date: "$dateNorm" } },
+                revenue: { $sum: convert("revenue") },
+              }},
+              { $sort: { _id: 1 } },
+            ],
+            itemsThisMonth: [
+              { $match: { dateNorm: { $gte: monthStart, $lt: monthEnd } } },
+              { $count: "count" },
+            ],
+          }},
+        ])
         .toArray(),
-
-      db.collection("items")
-        .aggregate([{ $match: match }, { $group: { _id: null, avg: { $avg: convert("price") } } }])
-        .toArray(),
-
-      (() => {
-        const now = new Date();
-        const ym = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}`;
-        return db.collection("items").countDocuments({ ...match, date: { $regex: `^${ym}` } });
-      })(),
 
       db.collection("items")
         .aggregate([
+          ...pipeline,
           { $match: nonEmptyCategory },
           { $group: { _id: "$category", count: { $sum: 1 }, revenue: { $sum: convert("revenue") } } },
           { $sort: { revenue: -1 } },
@@ -234,6 +255,7 @@ router.post("/analytics/insights", async (req: AuthRequest, res: any) => {
 
       db.collection("items")
         .aggregate([
+          ...pipeline,
           { $match: nonEmptyProduct },
           { $group: { _id: "$productName", count: { $sum: 1 }, revenue: { $sum: convert("revenue") } } },
           { $sort: { revenue: -1 } },
@@ -243,6 +265,7 @@ router.post("/analytics/insights", async (req: AuthRequest, res: any) => {
 
       db.collection("items")
         .aggregate([
+          ...pipeline,
           { $match: nonEmptyProduct },
           { $group: { _id: "$productName", count: { $sum: 1 }, revenue: { $sum: convert("revenue") } } },
           { $sort: { count: -1 } },
@@ -252,6 +275,7 @@ router.post("/analytics/insights", async (req: AuthRequest, res: any) => {
 
       db.collection("items")
         .aggregate([
+          ...pipeline,
           { $match: nonEmptyProduct },
           { $group: { _id: "$productName", count: { $sum: 1 }, revenue: { $sum: convert("revenue") } } },
           { $sort: { revenue: 1 } },
@@ -261,49 +285,43 @@ router.post("/analytics/insights", async (req: AuthRequest, res: any) => {
 
       db.collection("items")
         .aggregate([
+          ...pipeline,
           { $match: nonEmptyPlatform },
           { $group: { _id: "$sourcePlatform", count: { $sum: 1 }, revenue: { $sum: convert("revenue") } } },
           { $sort: { revenue: -1 } },
         ])
         .toArray(),
-
     ]);
 
-    const totalRevenue = totalRevenueAgg[0]?.total || 0;
-    const avgPrice = avgPriceAgg[0]?.avg || 0;
+    const data = facetResult[0] || {};
+    const overviewStats = data.stats?.[0] || {};
 
-    const rawItems = await db.collection("items")
-      .find(match, { projection: { date: 1, revenue: 1 } })
-      .toArray();
-
-    const monthlyRevenue: Record<string, number> = {};
-    for (const item of rawItems) {
-      const d = new Date(item.date as string);
-      if (!isNaN(d.getTime())) {
-        const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`;
-        monthlyRevenue[key] = (monthlyRevenue[key] || 0) + (parseFloat(item.revenue as string) || 0);
-      }
-    }
-
-    const sortedMonths = Object.entries(monthlyRevenue).sort(([a], [b]) => a.localeCompare(b));
+    const sortedMonths = (data.monthlyRevenue || []) as Array<{ _id: string; revenue: number }>;
 
     let momGrowth: number | null = null;
     if (sortedMonths.length >= 2) {
-      const last = sortedMonths[sortedMonths.length - 1][1];
-      const prev = sortedMonths[sortedMonths.length - 2][1];
+      const last = sortedMonths[sortedMonths.length - 1].revenue;
+      const prev = sortedMonths[sortedMonths.length - 2].revenue;
       if (prev > 0) momGrowth = Math.round(((last - prev) / prev) * 10000) / 100;
     }
 
     const rounds = (n: number) => Math.round(n * 100) / 100;
 
+    const [categoryBreakdown, topProductsRevenue, topProductsVolume, lowPerformers, platformRevenue] = rest;
+
     const dataPayload = {
-      overview: { totalItems, totalRevenue: rounds(totalRevenue), avgPrice: rounds(avgPrice), itemsThisMonth },
+      overview: {
+        totalItems: overviewStats.totalItems || 0,
+        totalRevenue: rounds(overviewStats.totalRevenue || 0),
+        avgPrice: rounds(overviewStats.avgPrice || 0),
+        itemsThisMonth: data.itemsThisMonth?.[0]?.count || 0,
+      },
       categories: categoryBreakdown.map((c: any) => ({ n: c._id, c: c.count, r: rounds(c.revenue) })),
       topByRevenue: topProductsRevenue.map((p: any) => ({ n: p._id, r: rounds(p.revenue), q: p.count })),
       topByQty: topProductsVolume.map((p: any) => ({ n: p._id, q: p.count, r: rounds(p.revenue) })),
       lowPerformers: lowPerformers.map((p: any) => ({ n: p._id, r: rounds(p.revenue), q: p.count })),
       platforms: platformRevenue.map((p: any) => ({ n: p._id, r: rounds(p.revenue), q: p.count })),
-      revenueByMonth: sortedMonths.slice(-12).map(([m, r]) => ({ m, r: rounds(r) })),
+      revenueByMonth: sortedMonths.slice(-12).map((m) => ({ m: m._id, r: rounds(m.revenue) })),
       momGrowth: momGrowth !== null ? `${momGrowth > 0 ? "+" : ""}${momGrowth}%` : null,
     };
 

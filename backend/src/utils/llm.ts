@@ -17,22 +17,29 @@ async function groqRequest(
     body.response_format = { type: "json_object" };
   }
 
-  const res = await fetch(`${BASE}/chat/completions`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify(body),
-  });
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 15_000);
+  try {
+    const res = await fetch(`${BASE}/chat/completions`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify(body),
+      signal: controller.signal,
+    });
 
-  if (!res.ok) {
-    const err = await res.text();
-    throw new Error(`Groq API error (${res.status}): ${err}`);
+    if (!res.ok) {
+      const err = await res.text();
+      throw new Error(`Groq API error (${res.status}): ${err}`);
+    }
+
+    const data: any = await res.json();
+    return data.choices[0].message.content;
+  } finally {
+    clearTimeout(timeout);
   }
-
-  const data: any = await res.json();
-  return data.choices[0].message.content;
 }
 
 export async function callLLM(

@@ -115,7 +115,7 @@ export default function AddItemsPage() {
                 </p>
               </div>
             </div>
-            <div className="mt-4 flex flex-wrap gap-3">
+            <div className="mt-4 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
               <button
                 onClick={() => handleSampleData("sales-sample.csv")}
                 className="btn btn-outline btn-sm"
@@ -126,7 +126,19 @@ export default function AddItemsPage() {
                 onClick={() => handleSampleData("shopify-orders.xlsx")}
                 className="btn btn-outline btn-sm"
               >
-                Shopify Export
+                Shopify (XLSX)
+              </button>
+              <button
+                onClick={() => handleSampleData("shopify-orders.csv")}
+                className="btn btn-outline btn-sm"
+              >
+                Shopify (CSV)
+              </button>
+              <button
+                onClick={() => handleSampleData("woocommerce-orders.csv")}
+                className="btn btn-outline btn-sm"
+              >
+                WooCommerce
               </button>
             </div>
           </div>

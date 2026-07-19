@@ -170,7 +170,7 @@ Authenticated endpoints:
 
 **Express auth.** Express has its own auth middleware that validates the Bearer token by querying the MongoDB `session` collection. It never creates sessions — it's read-only on auth. The contact endpoint is registered before the auth middleware so it stays public.
 
-**Upload pipeline.** Files are uploaded via UploadThing to get a URL. That URL is sent to `/api/upload/preview`, which downloads the file, parses it (CSV via csv-parse, XLSX via the xlsx library), runs rule-based schema detection against 40+ known column name variants, and falls back to Groq for unmapped columns if confidence is below 80%. The user reviews the mapping, then `/api/upload/confirm` normalizes and inserts the rows.
+**Upload pipeline.** Files go to UploadThing, which returns a URL. That URL is sent to `/api/upload/preview`, which downloads the file (capped at 10MB, 10s timeout), parses it (CSV via csv-parse, XLSX via the xlsx library), runs rule-based schema detection against 40+ known column name variants, and falls back to Groq for unmapped columns if confidence is below 80%. The user reviews the mapping, then `/api/upload/confirm` re-downloads, normalises (dates are stored as ISODate objects), and bulk-inserts into the `items` collection.
 
 **AI features.** All AI runs through Groq's API (`llama-3.3-70b-versatile`) via two utilities in `backend/src/utils/llm.ts`: `callLLM()` for single-turn generation (content, insights) and `callLLMChat()` for multi-turn chat. AI does four things:
 1. Column mapping fallback when rules don't match
@@ -179,6 +179,8 @@ Authenticated endpoints:
 4. Chat assistant — streams store context (total items, revenue, top categories/products) into the system prompt so the model answers questions about the user's actual data
 
 **MongoDB collections.** `session` and `user` (BetterAuth), `items` (uploaded product data), `conversations` (chat history with messages), `contacts` (form submissions).
+
+**Performance.** Indexes are created lazily on first request (not at deploy time) via `ensureIndexes()` in `server.ts`: `session.token`, `items.ownerId+createdAt`, `items.ownerId+date`, `conversations.userId+updatedAt`. Analytics endpoints use `$facet` aggregation pipelines to consolidate what used to be 10+ separate round trips into a single query. External calls (Groq API, file download, SMTP) have explicit timeouts (10-15s) to prevent cold-start functions from hanging.
 
 ## Deployment
 
