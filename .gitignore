@@ -7,3 +7,4 @@ dist/
 *.log
 AGENTS.md
 CLAUDE.md
+.opencode/
