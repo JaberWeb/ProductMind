@@ -1,16 +1,121 @@
 Order ID,Product Name,Quantity,Unit Price,Revenue,Date,Category,Customer Email,Platform
-ORD-001,Wireless Bluetooth Headphones,2,79.99,159.98,2024-01-15,Electronics,john.doe@email.com,Shopify
-ORD-002,Yoga Mat Premium,1,45.00,45.00,2024-01-15,Fitness,sarah.wilson@email.com,WooCommerce
-ORD-003,Organic Green Tea 50-pack,3,12.99,38.97,2024-01-16,Grocery,alex.chen@email.com,Shopify
-ORD-004,Stainless Steel Water Bottle,4,24.50,98.00,2024-01-16,Home & Living,emma.jones@email.com,Amazon
-ORD-005,USB-C Charging Cable 6ft,10,8.99,89.90,2024-01-17,Electronics, mike.t@email.com,Shopify
-ORD-006,Cashmere Blend Scarf,2,34.99,69.98,2024-01-17,Fashion,linda.park@email.com,Etsy
-ORD-007,Sourdough Bread Starter Kit,1,28.50,28.50,2024-01-18,Food & Drinks,tom.baker@email.com,WooCommerce
-ORD-008,Desk LED Lamp Touch Control,3,39.99,119.97,2024-01-18,Office,rachel.green@email.com,Shopify
-ORD-009,Resistance Bands Set 5-pack,5,19.99,99.95,2024-01-19,Fitness,kevin.nguyen@email.com,Amazon
-ORD-010,French Press Coffee Maker,1,32.00,32.00,2024-01-19,Kitchen,maria.garcia@email.com,WooCommerce
-ORD-011,Leather Journal A5 Lined,6,14.99,89.94,2024-01-20,Stationery,james.wright@email.com,Etsy
-ORD-012,Noise Cancelling Earbuds,2,89.99,179.98,2024-01-20,Electronics,priya.sharma@email.com,Shopify
-ORD-013,Plant-Based Protein Powder 2lb,1,44.99,44.99,2024-01-21,Health,ryan.lee@email.com,Amazon
-ORD-014,Bamboo Cutting Board Set,3,27.99,83.97,2024-01-21,Kitchen,olivia.martinez@email.com,WooCommerce
-ORD-015,Scented Soy Candle Trio,4,18.50,74.00,2024-01-22,Home & Living,sophie.taylor@email.com,Etsy
+ORD-00001,Hemp Protein Bars Variety Pack,3,89.59,268.77,2024-11-27,Office,james.taylor37@mail.com,Shopify
+ORD-00002,Yoga Block Set,2,59.65,119.30,2024-02-07,Toys & Games,john.johnson297@proton.me,Shopify
+ORD-00003,Solar Power Bank 20000mAh,2,53.26,106.52,2024-04-23,Fitness,jason.allen972@gmail.com,WooCommerce
+ORD-00004,Plant-Based Protein Powder 2lb,2,67.09,134.18,2024-04-12,Sports,john.baker180@aol.com,Amazon
+ORD-00005,USB-C Charging Cable 6ft,1,52.47,52.47,2024-08-06,Beauty,sarah.scott332@icloud.com,Etsy
+ORD-00006,Wooden Chess Set,5,43.29,216.45,2024-11-27,Office,brian.baker863@icloud.com,WooCommerce
+ORD-00007,Wooden Chess Set,2,47.94,95.88,2024-05-11,Toys & Games,sophie.scott323@hotmail.com,Etsy
+ORD-00008,Bamboo Phone Stand,4,51.39,205.56,2024-02-28,Electronics,kimberly.park625@yahoo.com,Shopify
+ORD-00009,Desk Organizer Bamboo,6,48.08,288.48,2024-10-24,Grocery,eric.wright385@gmail.com,WooCommerce
+ORD-00010,Desk LED Lamp Touch Control,1,12.51,12.51,2024-03-03,Health,megan.thompson723@aol.com,WooCommerce
+ORD-00011,Solar Power Bank 20000mAh,1,17.89,17.89,2024-05-03,Fashion,laura.wilson462@outlook.com,Shopify
+ORD-00012,Desk LED Lamp Touch Control,2,22.01,44.02,2024-10-10,Beauty,priya.martin57@gmail.com,WooCommerce
+ORD-00013,Reusable Beeswax Food Wraps,4,11.38,45.52,2024-05-23,Accessories,ashley.clark363@mail.com,WooCommerce
+ORD-00014,Organic Cotton T-Shirt,8,5.42,43.36,2024-12-18,Fitness,sarah.white176@icloud.com,WooCommerce
+ORD-00015,Fitness Tracker Band,5,74.24,371.20,2024-06-09,Outdoor,james.doe298@aol.com,Etsy
+ORD-00016,Wall-Mounted Shelf,3,99.10,297.30,2024-08-14,Sports,brandon.lee967@hotmail.com,Etsy
+ORD-00017,Espresso Machine Pro,1,88.31,88.31,2024-08-10,Electronics,priya.park311@zoho.com,Etsy
+ORD-00018,Noise Cancelling Earbuds,1,51.29,51.29,2024-02-05,Food & Drinks,laura.white641@icloud.com,Etsy
+ORD-00019,Bamboo Cutting Board Set,5,38.86,194.30,2024-04-02,Fitness,brian.lee14@mail.com,Etsy
+ORD-00020,Yoga Mat Premium,2,64.56,129.12,2024-09-24,Outdoor,rachel.chen737@icloud.com,Etsy
+ORD-00021,Organic Matcha Powder,3,53.48,160.44,2024-10-17,Sports,alex.wilson967@email.com,Amazon
+ORD-00022,Leather Journal A5 Lined,8,89.88,719.04,2024-11-01,Beauty,laura.wilson355@gmail.com,Shopify
+ORD-00023,Aromatherapy Diffuser,1,63.33,63.33,2024-07-02,Office,daniel.smith240@yahoo.com,Shopify
+ORD-00024,Aromatherapy Diffuser,1,19.27,19.27,2024-04-07,Stationery,michelle.king963@aol.com,Amazon
+ORD-00025,Sourdough Bread Starter Kit,1,55.78,55.78,2024-11-02,Accessories,megan.park66@proton.me,Shopify
+ORD-00026,Wireless Bluetooth Headphones,1,67.72,67.72,2024-07-18,Sports,nicole.scott576@outlook.com,WooCommerce
+ORD-00027,Plant-Based Protein Powder 2lb,3,22.31,66.93,2024-08-19,Grocery,rachel.davis411@aol.com,Etsy
+ORD-00028,Stainless Steel Water Bottle,5,85.05,425.25,2024-09-27,Kitchen,maria.sharma826@zoho.com,Amazon
+ORD-00029,Reusable Beeswax Food Wraps,2,11.75,23.50,2024-10-25,Fitness,laura.nguyen31@icloud.com,WooCommerce
+ORD-00030,Adjustable Dumbbell Set,2,54.43,108.86,2024-01-07,Sports,james.johnson423@zoho.com,Shopify
+ORD-00031,Wireless Charging Pad,3,67.69,203.07,2024-08-25,Grocery,tyler.doe347@proton.me,Shopify
+ORD-00032,Ergonomic Office Chair,1,87.56,87.56,2024-02-06,Fitness,alex.wilson441@mail.com,Shopify
+ORD-00033,Natural Lip Balm Trio,4,37.28,149.12,2024-02-15,Electronics,jessica.martin748@email.com,Etsy
+ORD-00034,Bamboo Phone Stand,2,41.60,83.20,2024-01-25,Grocery,stephanie.clark667@outlook.com,Shopify
+ORD-00035,Desk LED Lamp Touch Control,2,46.63,93.26,2024-05-12,Accessories,nicole.smith488@icloud.com,Shopify
+ORD-00036,Espresso Machine Pro,4,95.14,380.56,2024-02-12,Grocery,maria.white429@outlook.com,Amazon
+ORD-00037,Bamboo Cutting Board Set,1,45.35,45.35,2024-04-17,Grocery,tyler.garcia998@hotmail.com,Shopify
+ORD-00038,Organic Matcha Powder,1,64.30,64.30,2024-05-24,Beauty,brian.hall529@hotmail.com,WooCommerce
+ORD-00039,Ceramic Mug Set of 4,2,73.63,147.26,2024-04-17,Food & Drinks,james.smith882@zoho.com,WooCommerce
+ORD-00040,Smart Water Leak Detector,10,22.76,227.60,2024-05-03,Outdoor,priya.johnson459@icloud.com,Amazon
+ORD-00041,Sourdough Bread Starter Kit,2,57.38,114.76,2024-03-09,Beauty,priya.white254@aol.com,WooCommerce
+ORD-00042,Wireless Bluetooth Headphones,1,52.73,52.73,2024-02-08,Accessories,rachel.lee394@mail.com,Shopify
+ORD-00043,Noise Cancelling Earbuds,10,11.46,114.60,2024-11-10,Office,mike.hall514@proton.me,WooCommerce
+ORD-00044,Solar Power Bank 20000mAh,4,33.13,132.52,2024-08-25,Fitness,megan.allen290@yahoo.com,Amazon
+ORD-00045,Sourdough Bread Starter Kit,2,5.18,10.36,2024-08-01,Kitchen,kimberly.jackson207@hotmail.com,WooCommerce
+ORD-00046,Organic Matcha Powder,3,17.48,52.44,2024-08-09,Stationery,james.smith626@mail.com,Etsy
+ORD-00047,Polarized Sunglasses,4,77.84,311.36,2024-02-01,Home & Living,david.brown58@gmail.com,WooCommerce
+ORD-00048,Cashmere Blend Scarf,2,60.00,120.00,2024-04-28,Grocery,brandon.miller682@icloud.com,Etsy
+ORD-00049,French Press Coffee Maker,10,92.62,926.20,2024-03-12,Electronics,rachel.martinez469@gmail.com,Shopify
+ORD-00050,Wall-Mounted Shelf,2,54.65,109.30,2024-04-06,Accessories,david.garcia124@zoho.com,Etsy
+ORD-00051,Wool Throw Blanket,5,16.98,84.90,2024-12-13,Kitchen,tom.scott542@gmail.com,Shopify
+ORD-00052,Solar Power Bank 20000mAh,3,87.83,263.49,2024-05-25,Beauty,laura.garcia584@hotmail.com,Shopify
+ORD-00053,Kombucha Starter Kit,10,86.75,867.50,2024-08-27,Grocery,emma.brown886@outlook.com,Shopify
+ORD-00054,Canvas Tote Bag,2,56.82,113.64,2024-06-14,Toys & Games,anna.nguyen246@outlook.com,Amazon
+ORD-00055,Kombucha Starter Kit,6,81.05,486.30,2024-10-17,Toys & Games,laura.martinez492@aol.com,Amazon
+ORD-00056,USB-C Charging Cable 6ft,4,49.65,198.60,2024-08-22,Toys & Games,ryan.clark815@hotmail.com,Shopify
+ORD-00057,Wall-Mounted Shelf,3,95.76,287.28,2024-04-02,Fashion,brian.white741@outlook.com,Amazon
+ORD-00058,Canvas Tote Bag,4,64.91,259.64,2024-04-01,Toys & Games,tom.park724@hotmail.com,WooCommerce
+ORD-00059,Microfiber Cleaning Cloth Set,2,65.15,130.30,2024-02-09,Fashion,rachel.walker156@icloud.com,Shopify
+ORD-00060,Plant-Based Protein Powder 2lb,10,96.28,962.80,2024-06-26,Home & Living,stephanie.lee153@zoho.com,Shopify
+ORD-00061,Aromatherapy Diffuser,2,89.53,179.06,2024-06-22,Accessories,maria.wilson454@email.com,WooCommerce
+ORD-00062,Insulated Lunch Bag,1,40.41,40.41,2024-12-01,Kitchen,brandon.wilson952@mail.com,Shopify
+ORD-00063,Cashmere Blend Scarf,1,32.53,32.53,2024-09-14,Grocery,brandon.king35@email.com,Shopify
+ORD-00064,Stainless Steel Water Bottle,5,9.95,49.75,2024-01-06,Beauty,tom.smith292@hotmail.com,Etsy
+ORD-00065,Canvas Tote Bag,2,68.36,136.72,2024-09-13,Toys & Games,tom.wilson488@aol.com,Amazon
+ORD-00066,Sourdough Bread Starter Kit,1,66.52,66.52,2024-07-23,Stationery,jessica.jackson800@zoho.com,Shopify
+ORD-00067,Yoga Mat Premium,6,21.98,131.88,2024-04-05,Beauty,olivia.wilson763@yahoo.com,Shopify
+ORD-00068,Natural Lip Balm Trio,6,82.91,497.46,2024-06-27,Stationery,tom.clark878@gmail.com,Amazon
+ORD-00069,Wall-Mounted Shelf,6,4.02,24.12,2024-12-13,Office,sophie.wilson47@icloud.com,Shopify
+ORD-00070,Natural Lip Balm Trio,2,43.53,87.06,2024-04-27,Beauty,anna.miller932@zoho.com,Shopify
+ORD-00071,Bamboo Phone Stand,2,18.25,36.50,2024-06-09,Outdoor,rachel.king895@hotmail.com,Etsy
+ORD-00072,USB-C Charging Cable 6ft,3,57.90,173.70,2024-06-22,Toys & Games,jason.moore397@zoho.com,Shopify
+ORD-00073,Noise Cancelling Earbuds,6,49.57,297.42,2024-07-10,Fashion,nicole.taylor688@mail.com,Etsy
+ORD-00074,Smart Water Leak Detector,5,7.01,35.05,2024-10-27,Toys & Games,jason.thompson806@proton.me,WooCommerce
+ORD-00075,Noise Cancelling Earbuds,1,15.37,15.37,2024-09-07,Stationery,eric.doe941@aol.com,WooCommerce
+ORD-00076,Electric Kettle Temperature Control,6,36.49,218.94,2024-01-15,Office,james.brown445@mail.com,Shopify
+ORD-00077,Ergonomic Office Chair,3,60.72,182.16,2024-10-12,Beauty,maria.allen149@hotmail.com,Amazon
+ORD-00078,Plant-Based Protein Powder 2lb,1,83.26,83.26,2024-05-03,Outdoor,brandon.thompson909@proton.me,WooCommerce
+ORD-00079,Wireless Bluetooth Headphones,8,65.41,523.28,2024-08-08,Outdoor,sophie.nguyen849@email.com,Etsy
+ORD-00080,Insulated Lunch Bag,2,47.74,95.48,2024-05-14,Electronics,tom.wilson390@icloud.com,Amazon
+ORD-00081,Microfiber Cleaning Cloth Set,6,25.38,152.28,2024-07-24,Food & Drinks,michelle.allen488@proton.me,Etsy
+ORD-00082,Organic Cotton T-Shirt,2,56.37,112.74,2024-03-28,Outdoor,sophie.adams957@icloud.com,Amazon
+ORD-00083,Fitness Tracker Band,5,46.41,232.05,2024-12-10,Health,alex.lewis813@gmail.com,Shopify
+ORD-00084,Aromatherapy Diffuser,1,99.63,99.63,2024-12-21,Home & Living,sophie.walker320@icloud.com,WooCommerce
+ORD-00085,Wireless Charging Pad,8,84.89,679.12,2024-10-01,Toys & Games,anna.thompson17@gmail.com,Etsy
+ORD-00086,Organic Green Tea 50-pack,10,7.54,75.40,2024-08-11,Fashion,nicole.scott805@yahoo.com,WooCommerce
+ORD-00087,Smart Water Leak Detector,8,76.35,610.80,2024-04-17,Food & Drinks,tyler.nguyen885@hotmail.com,Shopify
+ORD-00088,Smart Water Leak Detector,2,30.20,60.40,2024-06-07,Beauty,brandon.walker71@aol.com,Shopify
+ORD-00089,Cast Iron Skillet 12-inch,2,70.44,140.88,2024-08-21,Stationery,linda.lee235@zoho.com,Shopify
+ORD-00090,Himalayan Salt Lamp,2,35.43,70.86,2024-07-26,Grocery,sophie.taylor749@yahoo.com,Amazon
+ORD-00091,Stainless Steel Water Bottle,4,29.35,117.40,2024-03-03,Beauty,brian.martin485@icloud.com,Shopify
+ORD-00092,Bamboo Phone Stand,6,46.28,277.68,2024-09-18,Grocery,kevin.hall13@zoho.com,Etsy
+ORD-00093,Stainless Steel Straws Set,2,95.69,191.38,2024-04-08,Fitness,kevin.king989@proton.me,Shopify
+ORD-00094,Leather Journal A5 Lined,5,49.88,249.40,2024-03-05,Electronics,sarah.green773@proton.me,WooCommerce
+ORD-00095,Winter Wool Beanie,3,62.85,188.55,2024-09-22,Stationery,john.adams444@outlook.com,Amazon
+ORD-00096,Cashmere Blend Scarf,2,58.43,116.86,2024-02-24,Electronics,daniel.moore308@gmail.com,WooCommerce
+ORD-00097,Wool Throw Blanket,5,29.11,145.55,2024-09-03,Home & Living,david.wilson482@proton.me,WooCommerce
+ORD-00098,Bamboo Phone Stand,6,41.67,250.02,2024-03-27,Stationery,ryan.allen9@mail.com,WooCommerce
+ORD-00099,Yoga Mat Premium,1,94.13,94.13,2024-12-19,Home & Living,jason.wilson949@zoho.com,Etsy
+ORD-00100,Collapsible Travel Cup,2,96.40,192.80,2024-04-02,Outdoor,laura.nguyen145@hotmail.com,WooCommerce
+ORD-00101,Men's Running Shoes,2,89.94,179.88,2024-07-08,Accessories,daniel.wilson90@zoho.com,Shopify
+ORD-00102,USB-C Charging Cable 6ft,3,97.38,292.14,2024-07-21,Beauty,sarah.harris950@outlook.com,Etsy
+ORD-00103,Bamboo Cutting Board Set,3,48.35,145.05,2024-10-10,Beauty,priya.garcia868@email.com,Etsy
+ORD-00104,Noise Cancelling Earbuds,4,54.61,218.44,2024-11-05,Office,nicole.martin830@hotmail.com,Shopify
+ORD-00105,Reusable Beeswax Food Wraps,2,56.95,113.90,2024-08-16,Stationery,sarah.sharma731@hotmail.com,Etsy
+ORD-00106,Microfiber Cleaning Cloth Set,1,70.68,70.68,2024-01-09,Office,nicole.jackson822@yahoo.com,Shopify
+ORD-00107,Leather Journal A5 Lined,6,7.62,45.72,2024-10-05,Grocery,jessica.scott817@icloud.com,Amazon
+ORD-00108,Reusable Beeswax Food Wraps,2,75.26,150.52,2024-11-22,Stationery,kevin.davis404@mail.com,Amazon
+ORD-00109,Scented Soy Candle Trio,6,32.47,194.82,2024-07-03,Toys & Games,tyler.taylor816@email.com,Shopify
+ORD-00110,Collapsible Travel Cup,6,67.33,403.98,2024-03-24,Home & Living,maria.walker15@outlook.com,Amazon
+ORD-00111,Scented Soy Candle Trio,5,23.72,118.60,2024-10-08,Beauty,anna.taylor218@email.com,Amazon
+ORD-00112,Electric Kettle Temperature Control,1,65.29,65.29,2024-08-25,Toys & Games,ashley.jones41@outlook.com,Shopify
+ORD-00113,Bamboo Cutting Board Set,1,76.00,76.00,2024-10-08,Kitchen,jason.young130@gmail.com,Shopify
+ORD-00114,Smart Water Leak Detector,10,40.66,406.60,2024-02-05,Fashion,linda.baker909@zoho.com,Shopify
+ORD-00115,Solar Power Bank 20000mAh,1,47.26,47.26,2024-08-05,Office,brian.wilson553@mail.com,WooCommerce
+ORD-00116,Aromatherapy Diffuser,8,72.30,578.40,2024-08-23,Office,rachel.moore320@zoho.com,Shopify
+ORD-00117,Mandala Coloring Book,2,85.92,171.84,2024-02-15,Home & Living,alex.johnson284@hotmail.com,Shopify
+ORD-00118,Cast Iron Skillet 12-inch,3,56.13,168.39,2024-04-05,Kitchen,sophie.harris534@aol.com,Amazon
+ORD-00119,Bamboo Phone Stand,1,48.77,48.77,2024-12-13,Fashion,chris.baker383@outlook.com,Amazon
+ORD-00120,Wooden Chess Set,6,98.24,589.44,2024-10-07,Office,olivia.clark701@email.com,WooCommerce

@@ -13,6 +13,24 @@ Upload store data, analyze sales, generate AI content, chat with your data.
 - [Architecture](#architecture)
 - [Deployment](#deployment)
 
+## User flow
+
+1. **Sign up / Log in.** Create an account or log in. Your data is private — you only see what you upload.
+
+2. **Upload your file.** Drop a CSV or Excel file from any store (Shopify, WooCommerce, Amazon, Etsy — or a plain list). The system accepts `.csv`, `.xlsx`, and `.xls`.
+
+3. **Auto-detect & map.** The system reads your column names and tries to match them to its own fields (product name, price, quantity, date, etc.). If some columns aren't recognised, you can map them manually or let the AI figure it out.
+
+4. **Preview & confirm.** You see a preview of how your data will look. If it's correct, click save. The data goes into the database.
+
+5. **Manage items.** View, search, edit, or delete your uploaded records from the items page.
+
+6. **See analytics.** Charts show your revenue, top products, best categories, and sales over time. The AI can also generate plain-English business insights ("Your highest revenue category is Electronics at $12,400").
+
+7. **Generate content.** Pick a product and ask the AI to write a title, description, SEO snippet, or social media post. Choose tone and length.
+
+8. **Chat with your data.** Ask questions like "What was my best-selling product last month?" or "Which category has the lowest margin?" — the AI answers based on your actual uploaded data.
+
 ## Tech stack
 
 | Layer | What |

@@ -1,0 +1,121 @@
+Name,Email,Financial Status,Paid at,Fulfillment Status,Lineitem quantity,Lineitem name,Lineitem price,Total,Discount Amount,Shipping,Taxes,Created at
+#ORD-00001,mike.brown765@email.com,partially_refunded,2024-08-25,partial,3,"Portable Bluetooth Speaker",94.07,311.25,0.00,6.46,22.58,2024-08-25 14:56:00
+#ORD-00002,jason.green348@aol.com,paid,2024-08-05,unfulfilled,2,"Fitness Tracker Band",14.31,36.76,0.00,5.85,2.29,2024-08-05 17:45:00
+#ORD-00003,kevin.doe945@proton.me,paid,2024-03-02,unfulfilled,2,"Desk Organizer Bamboo",57.45,124.09,0.00,0.00,9.19,2024-03-02 13:58:00
+#ORD-00004,brandon.green481@proton.me,refunded,2024-11-14,fulfilled,1,"Scented Soy Candle Trio",96.57,107.00,0.00,2.70,7.73,2024-11-14 15:52:00
+#ORD-00005,tom.park383@yahoo.com,paid,2024-03-16,fulfilled,8,"Cast Iron Skillet 12-inch",7.30,67.96,0.00,4.89,4.67,2024-03-16 11:21:00
+#ORD-00006,sophie.martinez409@icloud.com,paid,2024-03-24,fulfilled,1,"Resistance Bands Set 5-pack",11.65,-8.25,19.29,0.00,-0.61,2024-03-24 11:17:00
+#ORD-00007,john.nguyen150@yahoo.com,paid,2024-03-12,partial,1,"Aromatherapy Diffuser",67.52,72.92,0.00,0.00,5.40,2024-03-12 17:41:00
+#ORD-00008,kevin.wilson996@zoho.com,paid,2024-05-22,fulfilled,1,"Organic Matcha Powder",8.21,13.43,0.00,4.56,0.66,2024-05-22 08:48:00
+#ORD-00009,megan.baker848@zoho.com,partially_refunded,2024-03-06,fulfilled,4,"French Press Coffee Maker",56.70,227.77,15.90,0.00,16.87,2024-03-06 10:34:00
+#ORD-00010,daniel.taylor812@mail.com,partially_refunded,2024-09-21,fulfilled,1,"Organic Cotton T-Shirt",76.60,88.92,0.00,6.19,6.13,2024-09-21 13:27:00
+#ORD-00011,mike.baker429@aol.com,paid,2024-11-04,partial,2,"Vitamin D3 5000 IU Supplement",44.34,103.56,0.00,7.79,7.09,2024-11-04 14:57:00
+#ORD-00012,kimberly.jackson353@aol.com,partially_refunded,2024-10-19,fulfilled,5,"Adjustable Dumbbell Set",51.30,273.86,2.93,0.00,20.29,2024-10-19 17:40:00
+#ORD-00013,alex.jackson527@proton.me,paid,2024-07-02,partial,2,"Polarized Sunglasses",21.64,46.74,0.00,0.00,3.46,2024-07-02 16:46:00
+#ORD-00014,alex.white314@yahoo.com,paid,2024-11-18,fulfilled,10,"French Press Coffee Maker",68.27,742.85,0.00,5.53,54.62,2024-11-18 18:37:00
+#ORD-00015,jessica.taylor631@hotmail.com,paid,2024-08-22,fulfilled,2,"Organic Green Tea 50-pack",7.54,16.29,0.00,0.00,1.21,2024-08-22 12:12:00
+#ORD-00016,ashley.johnson658@gmail.com,paid,2024-05-09,partial,2,"Reusable Beeswax Food Wraps",97.40,210.38,0.00,0.00,15.58,2024-05-09 09:20:00
+#ORD-00017,stephanie.johnson348@mail.com,refunded,2024-09-05,fulfilled,2,"Kombucha Starter Kit",40.34,77.52,8.90,0.00,5.74,2024-09-05 10:16:00
+#ORD-00018,laura.moore200@hotmail.com,paid,2024-01-01,fulfilled,3,"Mandala Coloring Book",35.00,118.13,0.00,4.73,8.40,2024-01-01 16:53:00
+#ORD-00019,sophie.lewis95@zoho.com,paid,2024-04-02,fulfilled,6,"Aromatherapy Diffuser",30.40,203.35,0.00,6.36,14.59,2024-04-02 17:07:00
+#ORD-00020,jason.thompson890@icloud.com,paid,2024-11-02,unfulfilled,3,"Ergonomic Office Chair",82.64,259.18,7.94,0.00,19.20,2024-11-02 09:51:00
+#ORD-00021,michelle.lee531@icloud.com,paid,2024-09-12,partial,4,"Organic Matcha Powder",13.61,58.80,0.00,0.00,4.36,2024-09-12 16:32:00
+#ORD-00022,amanda.white684@outlook.com,refunded,2024-09-23,fulfilled,1,"Men's Running Shoes",14.02,15.14,0.00,0.00,1.12,2024-09-23 11:02:00
+#ORD-00023,maria.smith65@email.com,paid,2024-04-18,fulfilled,1,"Espresso Machine Pro",68.76,80.32,0.00,6.06,5.50,2024-04-18 10:50:00
+#ORD-00024,david.johnson63@mail.com,partially_refunded,2024-07-27,unfulfilled,8,"Polarized Sunglasses",64.90,567.03,0.00,6.29,41.54,2024-07-27 17:09:00
+#ORD-00025,james.taylor484@yahoo.com,paid,2024-10-12,partial,5,"Ceramic Mug Set of 4",85.70,468.53,0.00,5.75,34.28,2024-10-12 09:31:00
+#ORD-00026,ashley.doe784@outlook.com,partially_refunded,2024-03-03,fulfilled,2,"Fitness Tracker Band",6.18,13.35,0.00,0.00,0.99,2024-03-03 09:09:00
+#ORD-00027,brian.clark381@gmail.com,paid,2024-12-28,partial,6,"Noise Cancelling Earbuds",65.36,423.53,0.00,0.00,31.37,2024-12-28 08:50:00
+#ORD-00028,stephanie.moore467@proton.me,partially_refunded,2024-07-25,fulfilled,4,"Leather Journal A5 Lined",57.71,239.55,9.03,0.00,17.74,2024-07-25 11:27:00
+#ORD-00029,olivia.jackson244@mail.com,partially_refunded,2024-03-28,unfulfilled,2,"Organic Green Tea 50-pack",89.08,178.02,19.17,6.31,12.72,2024-03-28 09:45:00
+#ORD-00030,maria.taylor255@mail.com,paid,2024-12-24,fulfilled,8,"Resistance Bands Set 5-pack",65.39,564.97,0.00,0.00,41.85,2024-12-24 16:48:00
+#ORD-00031,david.jackson596@gmail.com,paid,2024-07-09,fulfilled,8,"Microfiber Cleaning Cloth Set",38.64,323.32,11.99,2.42,23.77,2024-07-09 14:27:00
+#ORD-00032,jessica.miller352@yahoo.com,paid,2024-03-10,unfulfilled,5,"Winter Wool Beanie",42.34,228.64,0.00,0.00,16.94,2024-03-10 12:14:00
+#ORD-00033,nicole.nguyen251@outlook.com,paid,2024-01-23,fulfilled,2,"Hemp Protein Bars Variety Pack",68.36,147.66,0.00,0.00,10.94,2024-01-23 12:38:00
+#ORD-00034,michelle.walker218@icloud.com,partially_refunded,2024-08-21,partial,10,"Himalayan Salt Lamp",54.19,584.85,7.11,7.28,42.78,2024-08-21 13:38:00
+#ORD-00035,david.brown822@zoho.com,refunded,2024-06-18,partial,1,"Scented Soy Candle Trio",73.90,77.58,2.07,0.00,5.75,2024-06-18 08:36:00
+#ORD-00036,jessica.baker439@aol.com,paid,2024-11-13,fulfilled,3,"Desk LED Lamp Touch Control",83.07,269.15,0.00,0.00,19.94,2024-11-13 10:35:00
+#ORD-00037,linda.park702@email.com,paid,2024-01-26,fulfilled,1,"Kombucha Starter Kit",26.66,29.50,6.55,7.78,1.61,2024-01-26 15:48:00
+#ORD-00038,james.park101@icloud.com,refunded,2024-05-10,partial,10,"Hemp Protein Bars Variety Pack",97.45,1040.19,11.36,0.00,77.05,2024-05-10 12:28:00
+#ORD-00039,nicole.smith225@zoho.com,paid,2024-08-02,fulfilled,3,"Desk LED Lamp Touch Control",66.61,215.82,0.00,0.00,15.99,2024-08-02 12:27:00
+#ORD-00040,kimberly.martinez268@aol.com,paid,2024-08-08,fulfilled,8,"USB-C Charging Cable 6ft",11.29,104.02,0.00,6.47,7.23,2024-08-08 16:03:00
+#ORD-00041,ryan.allen751@proton.me,paid,2024-07-11,partial,1,"Organic Green Tea 50-pack",70.84,78.99,2.02,4.66,5.51,2024-07-11 18:52:00
+#ORD-00042,brandon.harris81@yahoo.com,refunded,2024-12-18,fulfilled,1,"Adjustable Dumbbell Set",33.80,42.50,0.00,6.00,2.70,2024-12-18 16:36:00
+#ORD-00043,michelle.johnson711@aol.com,refunded,2024-08-17,fulfilled,4,"Microfiber Cleaning Cloth Set",20.77,89.73,0.00,0.00,6.65,2024-08-17 12:15:00
+#ORD-00044,rachel.scott658@gmail.com,paid,2024-09-03,partial,2,"Desk Organizer Bamboo",44.88,103.10,0.00,6.16,7.18,2024-09-03 13:47:00
+#ORD-00045,nicole.adams386@email.com,refunded,2024-06-06,fulfilled,5,"Wireless Charging Pad",87.32,478.83,0.00,7.30,34.93,2024-06-06 13:16:00
+#ORD-00046,laura.park324@outlook.com,paid,2024-08-17,fulfilled,2,"Ergonomic Office Chair",33.70,73.13,5.00,5.74,4.99,2024-08-17 12:53:00
+#ORD-00047,daniel.martin285@email.com,refunded,2024-06-19,fulfilled,1,"Insulated Lunch Bag",44.99,48.59,0.00,0.00,3.60,2024-06-19 09:25:00
+#ORD-00048,jason.doe305@gmail.com,refunded,2024-11-25,partial,5,"Fitness Tracker Band",22.40,120.96,0.00,0.00,8.96,2024-11-25 10:02:00
+#ORD-00049,ryan.walker597@yahoo.com,partially_refunded,2024-06-21,fulfilled,5,"Smart Water Leak Detector",73.88,398.95,0.00,0.00,29.55,2024-06-21 13:57:00
+#ORD-00050,kimberly.scott976@hotmail.com,paid,2024-08-27,unfulfilled,1,"Desk Organizer Bamboo",66.44,57.89,12.84,0.00,4.29,2024-08-27 18:09:00
+#ORD-00051,priya.moore635@aol.com,partially_refunded,2024-12-03,fulfilled,1,"Espresso Machine Pro",46.15,49.84,0.00,0.00,3.69,2024-12-03 09:36:00
+#ORD-00052,laura.nguyen688@icloud.com,paid,2024-04-01,fulfilled,2,"Hemp Protein Bars Variety Pack",62.51,134.02,5.08,4.48,9.60,2024-04-01 18:53:00
+#ORD-00053,jason.miller141@proton.me,partially_refunded,2024-07-08,fulfilled,10,"Hemp Protein Bars Variety Pack",50.37,536.15,11.62,4.70,39.37,2024-07-08 09:04:00
+#ORD-00054,olivia.walker784@zoho.com,paid,2024-03-03,fulfilled,8,"Stainless Steel Straws Set",17.15,152.49,0.00,4.31,10.98,2024-03-03 10:00:00
+#ORD-00055,ashley.wilson530@email.com,refunded,2024-09-27,unfulfilled,10,"Collapsible Travel Cup",60.17,649.84,0.00,0.00,48.14,2024-09-27 10:04:00
+#ORD-00056,tyler.adams867@email.com,partially_refunded,2024-02-09,fulfilled,3,"Solar Power Bank 20000mAh",55.21,175.61,7.10,4.40,12.68,2024-02-09 15:53:00
+#ORD-00057,jessica.smith409@outlook.com,partially_refunded,2024-07-21,fulfilled,2,"Canvas Tote Bag",40.82,88.17,0.00,0.00,6.53,2024-07-21 16:46:00
+#ORD-00058,stephanie.smith709@aol.com,refunded,2024-09-15,unfulfilled,5,"Canvas Tote Bag",6.91,37.31,0.00,0.00,2.76,2024-09-15 13:35:00
+#ORD-00059,anna.nguyen295@outlook.com,refunded,2024-03-23,unfulfilled,3,"Resistance Bands Set 5-pack",19.11,54.18,7.16,0.00,4.01,2024-03-23 18:07:00
+#ORD-00060,stephanie.hall573@outlook.com,refunded,2024-12-09,fulfilled,4,"Organic Green Tea 50-pack",97.50,421.20,0.00,0.00,31.20,2024-12-09 16:11:00
+#ORD-00061,daniel.harris746@icloud.com,refunded,2024-07-01,fulfilled,3,"Electric Kettle Temperature Control",33.32,107.96,0.00,0.00,8.00,2024-07-01 08:46:00
+#ORD-00062,scott.garcia72@email.com,partially_refunded,2024-05-16,partial,3,"Yoga Block Set",23.14,78.97,0.00,4.00,5.55,2024-05-16 14:13:00
+#ORD-00063,linda.lee683@gmail.com,partially_refunded,2024-07-28,partial,8,"Resistance Bands Set 5-pack",91.18,768.90,17.50,0.00,56.96,2024-07-28 18:10:00
+#ORD-00064,megan.wright359@proton.me,paid,2024-12-08,fulfilled,2,"Wireless Bluetooth Headphones",44.64,96.42,0.00,0.00,7.14,2024-12-08 09:28:00
+#ORD-00065,ryan.johnson194@mail.com,partially_refunded,2024-04-06,partial,1,"Polarized Sunglasses",30.21,32.63,0.00,0.00,2.42,2024-04-06 12:02:00
+#ORD-00066,emma.walker46@yahoo.com,paid,2024-05-10,unfulfilled,1,"Stainless Steel Water Bottle",42.41,48.60,0.00,2.80,3.39,2024-05-10 11:17:00
+#ORD-00067,brandon.smith154@aol.com,paid,2024-01-10,fulfilled,1,"Plant-Based Protein Powder 2lb",95.76,98.35,7.66,3.20,7.05,2024-01-10 18:57:00
+#ORD-00068,emma.nguyen207@outlook.com,paid,2024-01-16,fulfilled,1,"Fitness Tracker Band",47.49,32.39,17.50,0.00,2.40,2024-01-16 16:19:00
+#ORD-00069,linda.garcia176@aol.com,refunded,2024-01-27,fulfilled,1,"Sourdough Bread Starter Kit",90.96,79.23,17.60,0.00,5.87,2024-01-27 08:41:00
+#ORD-00070,amanda.green421@gmail.com,paid,2024-01-03,fulfilled,2,"Stainless Steel Straws Set",72.34,151.14,4.74,0.00,11.20,2024-01-03 09:30:00
+#ORD-00071,emma.garcia845@aol.com,refunded,2024-02-23,fulfilled,1,"Espresso Machine Pro",81.07,87.56,0.00,0.00,6.49,2024-02-23 12:01:00
+#ORD-00072,john.king901@proton.me,paid,2024-03-19,fulfilled,8,"Wall-Mounted Shelf",32.52,280.97,0.00,0.00,20.81,2024-03-19 08:23:00
+#ORD-00073,emma.hall420@hotmail.com,paid,2024-08-15,fulfilled,2,"Microfiber Cleaning Cloth Set",60.34,131.03,5.05,6.15,9.25,2024-08-15 15:10:00
+#ORD-00074,anna.jones461@zoho.com,paid,2024-03-27,partial,8,"Wooden Chess Set",31.81,274.84,0.00,0.00,20.36,2024-03-27 09:38:00
+#ORD-00075,jason.nguyen412@outlook.com,refunded,2024-09-26,unfulfilled,3,"Plant-Based Protein Powder 2lb",73.52,238.20,0.00,0.00,17.64,2024-09-26 14:22:00
+#ORD-00076,priya.miller43@aol.com,paid,2024-10-27,partial,10,"Sourdough Bread Starter Kit",55.34,600.36,0.00,2.69,44.27,2024-10-27 16:50:00
+#ORD-00077,brian.smith562@aol.com,refunded,2024-10-06,fulfilled,8,"Portable Bluetooth Speaker",28.99,250.47,0.00,0.00,18.55,2024-10-06 17:25:00
+#ORD-00078,priya.baker503@email.com,paid,2024-09-04,fulfilled,3,"Wireless Charging Pad",82.76,256.19,11.07,0.00,18.98,2024-09-04 12:51:00
+#ORD-00079,sarah.baker609@yahoo.com,partially_refunded,2024-08-23,unfulfilled,1,"Natural Lip Balm Trio",8.07,0.86,7.27,0.00,0.06,2024-08-23 11:27:00
+#ORD-00080,daniel.lee13@proton.me,paid,2024-12-06,unfulfilled,1,"Bamboo Cutting Board Set",56.10,60.59,0.00,0.00,4.49,2024-12-06 17:56:00
+#ORD-00081,megan.allen384@yahoo.com,paid,2024-05-11,unfulfilled,2,"Wool Throw Blanket",31.15,67.28,0.00,0.00,4.98,2024-05-11 13:41:00
+#ORD-00082,maria.johnson556@hotmail.com,refunded,2024-07-10,partial,2,"Aromatherapy Diffuser",60.49,130.66,0.00,0.00,9.68,2024-07-10 14:29:00
+#ORD-00083,brandon.park959@zoho.com,paid,2024-04-27,unfulfilled,2,"Scented Soy Candle Trio",25.01,54.02,0.00,0.00,4.00,2024-04-27 09:46:00
+#ORD-00084,nicole.martin853@aol.com,paid,2024-08-23,fulfilled,3,"Stainless Steel Water Bottle",81.77,264.93,0.00,0.00,19.62,2024-08-23 10:32:00
+#ORD-00085,ashley.wilson591@yahoo.com,paid,2024-07-07,unfulfilled,1,"Wooden Chess Set",35.04,42.87,0.00,5.03,2.80,2024-07-07 12:16:00
+#ORD-00086,kevin.baker644@zoho.com,refunded,2024-02-19,partial,2,"Hemp Protein Bars Variety Pack",28.11,60.72,0.00,0.00,4.50,2024-02-19 09:15:00
+#ORD-00087,daniel.doe46@icloud.com,paid,2024-06-25,unfulfilled,3,"Mandala Coloring Book",46.32,157.05,0.00,6.97,11.12,2024-06-25 14:24:00
+#ORD-00088,priya.moore232@hotmail.com,refunded,2024-03-21,partial,1,"Fitness Tracker Band",21.94,30.50,0.00,6.80,1.76,2024-03-21 11:52:00
+#ORD-00089,mike.young89@aol.com,paid,2024-11-05,partial,1,"Insulated Lunch Bag",63.27,72.38,0.00,4.05,5.06,2024-11-05 17:49:00
+#ORD-00090,kimberly.brown876@email.com,partially_refunded,2024-10-14,fulfilled,1,"Wireless Charging Pad",9.13,-6.60,15.24,0.00,-0.49,2024-10-14 11:50:00
+#ORD-00091,anna.wilson930@gmail.com,paid,2024-12-22,fulfilled,2,"Organic Cotton T-Shirt",13.05,28.19,0.00,0.00,2.09,2024-12-22 08:32:00
+#ORD-00092,alex.scott98@yahoo.com,paid,2024-09-15,unfulfilled,2,"Sourdough Bread Starter Kit",77.50,171.15,0.00,3.75,12.40,2024-09-15 18:55:00
+#ORD-00093,ashley.johnson795@aol.com,paid,2024-08-02,fulfilled,5,"Stainless Steel Straws Set",62.10,335.34,0.00,0.00,24.84,2024-08-02 09:37:00
+#ORD-00094,brian.brown988@zoho.com,paid,2024-11-25,partial,2,"Noise Cancelling Earbuds",24.40,52.70,0.00,0.00,3.90,2024-11-25 16:30:00
+#ORD-00095,jason.lee449@proton.me,paid,2024-07-23,partial,1,"Kombucha Starter Kit",22.43,24.22,0.00,0.00,1.79,2024-07-23 15:43:00
+#ORD-00096,mike.clark682@email.com,partially_refunded,2024-05-26,fulfilled,8,"Wooden Chess Set",34.64,281.39,16.57,0.00,20.84,2024-05-26 16:34:00
+#ORD-00097,nicole.baker288@yahoo.com,partially_refunded,2024-08-21,fulfilled,3,"Yoga Block Set",54.26,180.22,0.00,4.42,13.02,2024-08-21 12:16:00
+#ORD-00098,linda.green882@hotmail.com,refunded,2024-08-11,fulfilled,5,"Wooden Chess Set",18.84,88.06,12.66,0.00,6.52,2024-08-11 08:41:00
+#ORD-00099,amanda.davis30@zoho.com,paid,2024-06-16,partial,2,"Organic Green Tea 50-pack",80.77,174.46,0.00,0.00,12.92,2024-06-16 08:39:00
+#ORD-00100,adam.doe728@gmail.com,paid,2024-08-23,partial,1,"Organic Green Tea 50-pack",26.56,26.99,7.09,5.96,1.56,2024-08-23 12:06:00
+#ORD-00101,laura.garcia556@gmail.com,partially_refunded,2024-01-12,fulfilled,6,"French Press Coffee Maker",21.38,142.89,0.00,4.35,10.26,2024-01-12 10:42:00
+#ORD-00102,brian.green19@yahoo.com,refunded,2024-09-03,fulfilled,8,"Polarized Sunglasses",97.42,849.24,0.00,7.53,62.35,2024-09-03 14:34:00
+#ORD-00103,brandon.moore460@icloud.com,partially_refunded,2024-10-05,fulfilled,2,"Cast Iron Skillet 12-inch",45.92,106.43,0.00,7.24,7.35,2024-10-05 09:11:00
+#ORD-00104,priya.wilson863@hotmail.com,paid,2024-04-24,fulfilled,8,"Sourdough Bread Starter Kit",62.39,545.47,0.00,6.42,39.93,2024-04-24 08:19:00
+#ORD-00105,michelle.martin805@gmail.com,partially_refunded,2024-06-23,fulfilled,8,"Natural Lip Balm Trio",16.10,139.10,0.00,0.00,10.30,2024-06-23 12:33:00
+#ORD-00106,laura.nguyen986@outlook.com,refunded,2024-12-07,fulfilled,3,"Himalayan Salt Lamp",27.41,73.69,14.00,0.00,5.46,2024-12-07 08:34:00
+#ORD-00107,alex.adams96@icloud.com,paid,2024-01-24,fulfilled,1,"Yoga Mat Premium",22.09,23.86,0.00,0.00,1.77,2024-01-24 15:57:00
+#ORD-00108,rachel.wright965@outlook.com,paid,2024-01-23,partial,2,"Desk Organizer Bamboo",83.18,187.03,0.00,7.36,13.31,2024-01-23 15:24:00
+#ORD-00109,sarah.lee535@zoho.com,partially_refunded,2024-09-09,unfulfilled,10,"Noise Cancelling Earbuds",5.23,56.48,0.00,0.00,4.18,2024-09-09 14:00:00
+#ORD-00110,john.thompson122@icloud.com,paid,2024-01-04,partial,2,"Organic Green Tea 50-pack",83.58,180.53,0.00,0.00,13.37,2024-01-04 16:45:00
+#ORD-00111,nicole.lewis666@yahoo.com,partially_refunded,2024-12-20,fulfilled,2,"Wooden Chess Set",36.95,79.81,0.00,0.00,5.91,2024-12-20 14:42:00
+#ORD-00112,maria.white571@hotmail.com,paid,2024-10-15,fulfilled,8,"Electric Kettle Temperature Control",48.90,422.50,0.00,0.00,31.30,2024-10-15 11:51:00
+#ORD-00113,jason.walker914@hotmail.com,partially_refunded,2024-05-28,fulfilled,3,"Kombucha Starter Kit",95.75,290.79,18.00,0.00,21.54,2024-05-28 12:09:00
+#ORD-00114,john.thompson906@hotmail.com,paid,2024-09-06,fulfilled,3,"Fitness Tracker Band",28.78,93.25,0.00,0.00,6.91,2024-09-06 11:21:00
+#ORD-00115,maria.jackson780@yahoo.com,paid,2024-04-08,fulfilled,2,"Men's Running Shoes",23.71,51.21,0.00,0.00,3.79,2024-04-08 08:17:00
+#ORD-00116,linda.davis878@icloud.com,paid,2024-02-03,fulfilled,2,"Hemp Protein Bars Variety Pack",42.86,92.58,0.00,0.00,6.86,2024-02-03 17:03:00
+#ORD-00117,tyler.thompson506@mail.com,paid,2024-12-24,partial,4,"Winter Wool Beanie",63.83,275.75,0.00,0.00,20.43,2024-12-24 14:51:00
+#ORD-00118,brandon.sharma295@aol.com,paid,2024-02-01,unfulfilled,10,"Smart Water Leak Detector",50.58,546.26,0.00,0.00,40.46,2024-02-01 16:26:00
+#ORD-00119,laura.smith366@zoho.com,partially_refunded,2024-01-15,fulfilled,2,"Men's Running Shoes",37.12,80.18,0.00,0.00,5.94,2024-01-15 13:20:00
+#ORD-00120,ashley.wright40@hotmail.com,partially_refunded,2024-09-18,fulfilled,1,"USB-C Charging Cable 6ft",89.42,96.57,0.00,0.00,7.15,2024-09-18 09:26:00

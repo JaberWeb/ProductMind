@@ -1,0 +1,121 @@
+Order Number,Product Name,Qty,Unit Price,Total,Order Date,Category,Billing Email,Payment Method,Order Status
+WC-00001,Insulated Lunch Bag,2,8.67,17.34,2024-06-18,Fashion,kimberly.harris487@hotmail.com,Cash on Delivery,On Hold
+WC-00002,Winter Wool Beanie,1,46.66,46.66,2024-07-06,Fitness,kevin.white119@mail.com,Bank Transfer,Cancelled
+WC-00003,Adjustable Dumbbell Set,6,12.80,76.80,2024-01-05,Food & Drinks,alex.walker753@outlook.com,Credit Card,Processing
+WC-00004,Wireless Bluetooth Headphones,1,98.99,98.99,2024-08-02,Stationery,mike.allen83@gmail.com,Stripe,Refunded
+WC-00005,Solar Power Bank 20000mAh,4,70.00,280.00,2024-04-17,Beauty,olivia.harris263@aol.com,PayPal,Refunded
+WC-00006,Canvas Tote Bag,2,10.12,20.24,2024-07-20,Outdoor,laura.taylor443@aol.com,PayPal,Cancelled
+WC-00007,Insulated Lunch Bag,3,9.82,29.46,2024-05-12,Kitchen,ashley.baker682@mail.com,Cash on Delivery,Cancelled
+WC-00008,Stainless Steel Water Bottle,5,43.12,215.60,2024-04-17,Home & Living,chris.king472@proton.me,PayPal,Cancelled
+WC-00009,Wooden Chess Set,3,37.68,113.04,2024-03-28,Office,jessica.allen432@email.com,Stripe,Cancelled
+WC-00010,Desk LED Lamp Touch Control,2,30.26,60.52,2024-05-26,Sports,jessica.moore117@hotmail.com,PayPal,Refunded
+WC-00011,Solar Power Bank 20000mAh,1,45.20,45.20,2024-06-24,Office,stephanie.wilson628@hotmail.com,Cash on Delivery,Cancelled
+WC-00012,Portable Bluetooth Speaker,5,81.75,408.75,2024-06-02,Beauty,linda.thompson272@icloud.com,Cash on Delivery,On Hold
+WC-00013,Wool Throw Blanket,10,24.98,249.80,2024-07-23,Grocery,tom.white181@aol.com,PayPal,Refunded
+WC-00014,Wall-Mounted Shelf,1,9.36,9.36,2024-03-17,Beauty,ashley.martin868@proton.me,Bank Transfer,Processing
+WC-00015,Cashmere Blend Scarf,4,46.57,186.28,2024-12-21,Health,chris.white648@aol.com,Bank Transfer,On Hold
+WC-00016,Polarized Sunglasses,2,21.28,42.56,2024-06-25,Office,laura.johnson718@icloud.com,Bank Transfer,Completed
+WC-00017,Espresso Machine Pro,4,81.26,325.04,2024-04-10,Beauty,brian.wilson523@outlook.com,Stripe,Cancelled
+WC-00018,Electric Kettle Temperature Control,3,84.49,253.47,2024-05-11,Accessories,ashley.moore692@yahoo.com,Cash on Delivery,Refunded
+WC-00019,Insulated Lunch Bag,10,12.86,128.60,2024-01-17,Fashion,brian.jones198@hotmail.com,PayPal,Cancelled
+WC-00020,Noise Cancelling Earbuds,4,89.14,356.56,2024-02-15,Home & Living,priya.wilson670@aol.com,Bank Transfer,On Hold
+WC-00021,Stainless Steel Straws Set,4,68.54,274.16,2024-11-11,Office,stephanie.sharma193@gmail.com,Stripe,On Hold
+WC-00022,Fitness Tracker Band,1,92.02,92.02,2024-07-07,Stationery,laura.moore539@icloud.com,Cash on Delivery,On Hold
+WC-00023,Stainless Steel Straws Set,10,72.75,727.50,2024-07-13,Outdoor,linda.scott258@aol.com,Credit Card,Completed
+WC-00024,Vitamin D3 5000 IU Supplement,3,81.20,243.60,2024-07-10,Toys & Games,nicole.thompson872@outlook.com,Cash on Delivery,Completed
+WC-00025,Organic Matcha Powder,10,5.85,58.50,2024-09-26,Office,adam.miller56@mail.com,Cash on Delivery,Cancelled
+WC-00026,Mandala Coloring Book,1,79.29,79.29,2024-07-28,Health,anna.hall623@zoho.com,Bank Transfer,On Hold
+WC-00027,Organic Cotton T-Shirt,3,95.80,287.40,2024-10-16,Health,olivia.martin421@outlook.com,PayPal,Cancelled
+WC-00028,Adjustable Dumbbell Set,3,70.82,212.46,2024-03-15,Sports,tom.scott172@icloud.com,Cash on Delivery,Cancelled
+WC-00029,Stainless Steel Straws Set,10,81.49,814.90,2024-03-01,Office,rachel.moore28@hotmail.com,PayPal,Completed
+WC-00030,Microfiber Cleaning Cloth Set,10,10.31,103.10,2024-03-07,Stationery,nicole.garcia333@gmail.com,PayPal,Completed
+WC-00031,French Press Coffee Maker,4,49.71,198.84,2024-11-09,Sports,jessica.allen931@hotmail.com,PayPal,Cancelled
+WC-00032,Electric Kettle Temperature Control,2,41.31,82.62,2024-02-07,Accessories,laura.garcia28@hotmail.com,Cash on Delivery,Processing
+WC-00033,Wall-Mounted Shelf,3,88.81,266.43,2024-02-02,Sports,brandon.johnson828@aol.com,Cash on Delivery,Refunded
+WC-00034,USB-C Charging Cable 6ft,1,57.87,57.87,2024-01-11,Home & Living,ryan.allen172@email.com,Bank Transfer,Completed
+WC-00035,Stainless Steel Water Bottle,10,68.08,680.80,2024-10-19,Outdoor,priya.taylor964@zoho.com,Stripe,On Hold
+WC-00036,Noise Cancelling Earbuds,4,79.78,319.12,2024-07-24,Stationery,alex.king716@gmail.com,Credit Card,Cancelled
+WC-00037,USB-C Charging Cable 6ft,4,71.30,285.20,2024-09-18,Fashion,brandon.jones929@icloud.com,Cash on Delivery,Processing
+WC-00038,Collapsible Travel Cup,2,30.33,60.66,2024-04-13,Home & Living,linda.wright520@yahoo.com,Bank Transfer,Refunded
+WC-00039,Winter Wool Beanie,2,27.96,55.92,2024-10-13,Home & Living,daniel.allen366@gmail.com,Cash on Delivery,Refunded
+WC-00040,Cashmere Blend Scarf,5,29.18,145.90,2024-01-04,Grocery,stephanie.harris1@zoho.com,Stripe,On Hold
+WC-00041,Desk Organizer Bamboo,2,72.61,145.22,2024-06-20,Outdoor,amanda.miller3@zoho.com,Credit Card,Cancelled
+WC-00042,Collapsible Travel Cup,5,44.74,223.70,2024-01-15,Health,david.garcia724@aol.com,Cash on Delivery,On Hold
+WC-00043,Yoga Block Set,2,44.51,89.02,2024-09-02,Sports,tyler.wilson598@icloud.com,Bank Transfer,Refunded
+WC-00044,Smart Water Leak Detector,2,69.05,138.10,2024-04-23,Sports,maria.clark423@icloud.com,PayPal,On Hold
+WC-00045,Wireless Bluetooth Headphones,2,53.99,107.98,2024-02-10,Stationery,maria.smith454@gmail.com,Stripe,On Hold
+WC-00046,Natural Lip Balm Trio,5,6.54,32.70,2024-08-18,Grocery,alex.clark967@gmail.com,Bank Transfer,On Hold
+WC-00047,Men's Running Shoes,1,26.29,26.29,2024-08-14,Fashion,jessica.miller119@email.com,PayPal,Refunded
+WC-00048,Noise Cancelling Earbuds,2,58.86,117.72,2024-10-11,Outdoor,chris.garcia311@icloud.com,PayPal,Completed
+WC-00049,Winter Wool Beanie,1,84.82,84.82,2024-12-27,Home & Living,alex.taylor258@mail.com,Credit Card,Processing
+WC-00050,Winter Wool Beanie,5,15.15,75.75,2024-03-04,Food & Drinks,laura.chen660@yahoo.com,PayPal,Completed
+WC-00051,Fitness Tracker Band,3,82.86,248.58,2024-02-22,Fitness,tom.wilson86@proton.me,Stripe,Cancelled
+WC-00052,Men's Running Shoes,3,63.95,191.85,2024-05-22,Health,kevin.sharma460@hotmail.com,Stripe,Cancelled
+WC-00053,Ergonomic Office Chair,1,81.76,81.76,2024-10-28,Office,laura.white711@aol.com,Credit Card,On Hold
+WC-00054,Wireless Bluetooth Headphones,4,62.25,249.00,2024-11-04,Kitchen,adam.jones943@icloud.com,PayPal,Processing
+WC-00055,Fitness Tracker Band,6,76.35,458.10,2024-09-01,Fashion,kevin.smith32@mail.com,Stripe,On Hold
+WC-00056,Scented Soy Candle Trio,2,26.29,52.58,2024-08-23,Office,jason.johnson16@email.com,Stripe,Cancelled
+WC-00057,Noise Cancelling Earbuds,8,59.81,478.48,2024-08-11,Beauty,kimberly.park511@proton.me,Stripe,On Hold
+WC-00058,Canvas Tote Bag,2,45.02,90.04,2024-05-10,Sports,kimberly.miller214@mail.com,PayPal,Processing
+WC-00059,Wall-Mounted Shelf,3,99.54,298.62,2024-07-23,Stationery,emma.wright987@proton.me,Cash on Delivery,On Hold
+WC-00060,Ceramic Mug Set of 4,3,35.62,106.86,2024-07-06,Office,sarah.park168@gmail.com,Stripe,Processing
+WC-00061,Vitamin D3 5000 IU Supplement,10,22.78,227.80,2024-10-13,Electronics,stephanie.sharma949@hotmail.com,Credit Card,On Hold
+WC-00062,Mandala Coloring Book,1,66.99,66.99,2024-02-19,Home & Living,kevin.baker932@aol.com,Stripe,Completed
+WC-00063,Sourdough Bread Starter Kit,5,24.23,121.15,2024-10-08,Office,priya.allen368@gmail.com,Credit Card,Processing
+WC-00064,Organic Green Tea 50-pack,2,63.17,126.34,2024-05-09,Electronics,jessica.walker41@outlook.com,PayPal,On Hold
+WC-00065,Plant-Based Protein Powder 2lb,1,30.00,30.00,2024-10-02,Beauty,brandon.allen294@hotmail.com,Credit Card,Cancelled
+WC-00066,Stainless Steel Water Bottle,4,38.75,155.00,2024-02-04,Fashion,kevin.chen281@proton.me,Stripe,On Hold
+WC-00067,Stainless Steel Water Bottle,2,69.10,138.20,2024-11-15,Electronics,amanda.moore519@zoho.com,Stripe,Cancelled
+WC-00068,Polarized Sunglasses,2,93.85,187.70,2024-12-05,Stationery,ashley.sharma216@aol.com,Cash on Delivery,Cancelled
+WC-00069,Resistance Bands Set 5-pack,3,88.81,266.43,2024-08-24,Fitness,linda.johnson94@proton.me,Cash on Delivery,Refunded
+WC-00070,Natural Lip Balm Trio,2,54.73,109.46,2024-04-12,Stationery,stephanie.white881@email.com,Bank Transfer,Cancelled
+WC-00071,Stainless Steel Water Bottle,2,30.44,60.88,2024-08-21,Food & Drinks,maria.adams225@proton.me,PayPal,On Hold
+WC-00072,Espresso Machine Pro,1,96.65,96.65,2024-05-14,Sports,sarah.white649@outlook.com,PayPal,On Hold
+WC-00073,Wireless Charging Pad,1,51.41,51.41,2024-05-19,Office,eric.miller160@aol.com,Cash on Delivery,Completed
+WC-00074,Noise Cancelling Earbuds,1,40.08,40.08,2024-11-16,Fashion,michelle.davis547@email.com,PayPal,Cancelled
+WC-00075,Reusable Beeswax Food Wraps,1,90.92,90.92,2024-08-17,Home & Living,megan.wilson534@aol.com,Stripe,Completed
+WC-00076,Solar Power Bank 20000mAh,4,92.18,368.72,2024-08-01,Sports,priya.walker647@yahoo.com,PayPal,Refunded
+WC-00077,Desk LED Lamp Touch Control,2,24.55,49.10,2024-09-18,Health,linda.king913@aol.com,PayPal,Processing
+WC-00078,Organic Matcha Powder,8,80.32,642.56,2024-02-04,Outdoor,tyler.wilson343@hotmail.com,Stripe,Cancelled
+WC-00079,Sourdough Bread Starter Kit,2,19.35,38.70,2024-01-27,Outdoor,eric.chen903@hotmail.com,Credit Card,Processing
+WC-00080,Microfiber Cleaning Cloth Set,1,61.41,61.41,2024-06-03,Toys & Games,stephanie.davis260@icloud.com,PayPal,Refunded
+WC-00081,Wall-Mounted Shelf,5,8.67,43.35,2024-07-17,Home & Living,chris.jackson521@icloud.com,PayPal,Cancelled
+WC-00082,Electric Kettle Temperature Control,2,73.17,146.34,2024-08-21,Health,maria.sharma848@email.com,Stripe,Completed
+WC-00083,Scented Soy Candle Trio,3,12.29,36.87,2024-09-05,Fitness,rachel.sharma149@hotmail.com,Cash on Delivery,Cancelled
+WC-00084,Leather Journal A5 Lined,3,16.53,49.59,2024-01-09,Outdoor,maria.nguyen698@mail.com,Stripe,Cancelled
+WC-00085,Himalayan Salt Lamp,1,62.28,62.28,2024-06-23,Fitness,kimberly.lee575@hotmail.com,Bank Transfer,Processing
+WC-00086,Scented Soy Candle Trio,2,87.80,175.60,2024-11-28,Food & Drinks,tyler.white333@hotmail.com,Cash on Delivery,Refunded
+WC-00087,Stainless Steel Straws Set,2,50.04,100.08,2024-10-10,Kitchen,jason.smith24@yahoo.com,Cash on Delivery,Cancelled
+WC-00088,Polarized Sunglasses,4,29.32,117.28,2024-11-03,Kitchen,ryan.davis113@gmail.com,PayPal,On Hold
+WC-00089,Resistance Bands Set 5-pack,3,98.73,296.19,2024-07-05,Sports,james.wilson295@yahoo.com,PayPal,Completed
+WC-00090,Scented Soy Candle Trio,1,72.12,72.12,2024-10-22,Accessories,ashley.hall219@gmail.com,Cash on Delivery,On Hold
+WC-00091,Polarized Sunglasses,1,21.32,21.32,2024-04-13,Health,sarah.doe791@gmail.com,Credit Card,Processing
+WC-00092,Organic Cotton T-Shirt,2,58.05,116.10,2024-02-12,Office,nicole.harris262@hotmail.com,Stripe,Cancelled
+WC-00093,Organic Matcha Powder,10,35.34,353.40,2024-05-23,Electronics,anna.harris361@aol.com,PayPal,Processing
+WC-00094,Insulated Lunch Bag,1,35.58,35.58,2024-12-23,Stationery,daniel.davis545@gmail.com,Stripe,Processing
+WC-00095,Himalayan Salt Lamp,1,10.75,10.75,2024-08-05,Electronics,maria.king159@hotmail.com,PayPal,Cancelled
+WC-00096,Kombucha Starter Kit,8,35.65,285.20,2024-12-01,Beauty,daniel.clark948@outlook.com,Stripe,Processing
+WC-00097,Desk Organizer Bamboo,6,16.79,100.74,2024-09-26,Accessories,kimberly.martinez606@outlook.com,Stripe,On Hold
+WC-00098,Ergonomic Office Chair,3,96.29,288.87,2024-07-17,Stationery,brian.jones176@hotmail.com,PayPal,Refunded
+WC-00099,Reusable Beeswax Food Wraps,3,23.61,70.83,2024-05-22,Outdoor,alex.moore150@gmail.com,Cash on Delivery,Refunded
+WC-00100,Solar Power Bank 20000mAh,3,42.81,128.43,2024-08-05,Sports,sophie.lewis444@gmail.com,Bank Transfer,Cancelled
+WC-00101,Himalayan Salt Lamp,10,8.69,86.90,2024-09-14,Toys & Games,mike.park578@proton.me,Credit Card,Cancelled
+WC-00102,Organic Green Tea 50-pack,3,37.35,112.05,2024-05-14,Kitchen,kevin.smith281@aol.com,PayPal,Processing
+WC-00103,Collapsible Travel Cup,5,14.11,70.55,2024-04-04,Stationery,sarah.walker688@gmail.com,Stripe,Completed
+WC-00104,Stainless Steel Water Bottle,1,6.04,6.04,2024-11-02,Beauty,ryan.jackson316@email.com,Cash on Delivery,Refunded
+WC-00105,Yoga Block Set,4,28.19,112.76,2024-01-22,Fitness,mike.lee679@email.com,Stripe,Completed
+WC-00106,Cashmere Blend Scarf,1,89.33,89.33,2024-04-12,Toys & Games,jessica.moore906@icloud.com,Bank Transfer,Refunded
+WC-00107,Wooden Chess Set,2,36.83,73.66,2024-09-04,Electronics,david.davis478@email.com,Credit Card,Processing
+WC-00108,Espresso Machine Pro,1,11.40,11.40,2024-05-01,Kitchen,john.baker819@zoho.com,Stripe,Processing
+WC-00109,Adjustable Dumbbell Set,2,86.12,172.24,2024-11-09,Outdoor,daniel.park751@mail.com,Stripe,On Hold
+WC-00110,Wireless Charging Pad,3,54.07,162.21,2024-08-20,Grocery,emma.martinez357@hotmail.com,Stripe,Cancelled
+WC-00111,Microfiber Cleaning Cloth Set,1,67.93,67.93,2024-06-20,Home & Living,olivia.sharma362@outlook.com,Stripe,Processing
+WC-00112,Organic Green Tea 50-pack,3,24.14,72.42,2024-03-05,Accessories,anna.young232@aol.com,Cash on Delivery,On Hold
+WC-00113,Portable Bluetooth Speaker,8,22.63,181.04,2024-05-24,Outdoor,scott.thompson822@outlook.com,Bank Transfer,Cancelled
+WC-00114,Ceramic Mug Set of 4,2,5.71,11.42,2024-05-02,Office,maria.white107@mail.com,Credit Card,Cancelled
+WC-00115,USB-C Charging Cable 6ft,1,31.77,31.77,2024-01-02,Stationery,james.jackson318@proton.me,PayPal,Processing
+WC-00116,Wall-Mounted Shelf,2,51.65,103.30,2024-08-23,Sports,jessica.clark586@gmail.com,PayPal,On Hold
+WC-00117,Desk Organizer Bamboo,1,77.78,77.78,2024-12-11,Stationery,daniel.johnson997@mail.com,Cash on Delivery,Completed
+WC-00118,Mandala Coloring Book,10,42.24,422.40,2024-12-19,Stationery,chris.harris629@mail.com,PayPal,Refunded
+WC-00119,Bamboo Cutting Board Set,6,16.75,100.50,2024-05-05,Grocery,anna.nguyen262@icloud.com,Bank Transfer,Completed
+WC-00120,Polarized Sunglasses,4,58.72,234.88,2024-01-09,Fitness,daniel.martin303@gmail.com,Cash on Delivery,On Hold
