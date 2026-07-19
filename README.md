@@ -1,109 +1,173 @@
 # ProductMind
 
-AI-powered product management platform. Upload store data, analyze sales, generate content, and chat with your data.
+Upload store data, analyze sales, generate AI content, chat with your data.
+
+## Table of contents
+
+- [Tech stack](#tech-stack)
+- [Project structure](#project-structure)
+- [Getting started](#getting-started)
+- [Environment variables](#environment-variables)
+- [Scripts](#scripts)
+- [API overview](#api-overview)
+- [Architecture](#architecture)
+- [Deployment](#deployment)
 
 ## Tech stack
 
 | Layer | What |
 |---|---|
 | Frontend | Next.js 16, React 19, Tailwind CSS v4, daisyUI v5 |
-| Backend | Express 5, TypeScript, MongoDB (native driver) |
-| Auth | BetterAuth (Next.js) |
-| AI | Groq API (llama-3.3-70b) |
-| Uploads | UploadThing |
+| Backend | Express 5, TypeScript, MongoDB native driver |
+| Auth | BetterAuth (server-side in Next.js) |
+| AI | Groq API (llama-3.3-70b-versatile) |
+| File uploads | UploadThing |
+| Charts | Recharts |
+| Server state | TanStack Query |
+| Forms | react-hook-form |
 
-## Structure
+## Project structure
 
 ```
-├── frontend/          Next.js app (App Router)
-│   ├── app/           Pages, API routes, layouts
-│   ├── components/    React components
-│   └── services/      API client functions
-├── backend/           Express API server
+├── frontend/                    Next.js 16 App Router
+│   ├── app/
+│   │   ├── (public)/            Landing, login, register, about, contact, pricing, features
+│   │   ├── (protected)/         Dashboard, upload, items, analytics, AI assistant
+│   │   └── api/
+│   │       ├── auth/[...all]/   BetterAuth handler
+│   │       └── backend-proxy/   Forwards auth + requests to Express
+│   ├── components/              React components (layout, upload, items, charts, chat, sections)
+│   ├── services/                API client functions (calls backend-proxy)
+│   └── lib/                     Auth client config, UploadThing helpers
+│
+├── backend/                     Express 5 API server
 │   └── src/
-│       ├── routes/    Route handlers
-│       ├── utils/     LLM client, parsers, schema detection
-│       └── types/     TypeScript interfaces
-└── .opencode/         Development tooling config
+│       ├── server.ts            Entry point, middleware, route registration
+│       ├── db.ts                MongoDB connection singleton
+│       ├── routes/              Contact, upload, items, analytics, content, chat, dashboard
+│       ├── middleware/auth.ts   Token validation against MongoDB sessions
+│       ├── utils/               LLM client (Groq), CSV/XLSX parsers, schema detector
+│       └── types/               Shared interfaces
+│
+└── .opencode/                   Dev tooling config
 ```
 
 ## Getting started
 
-**Prerequisites:** Node.js 20+, MongoDB instance.
+**Prerequisites:** Node.js 20+, a MongoDB instance (Atlas or local).
 
 ```bash
-# clone
-git clone <repo-url>
+git clone https://github.com/JaberWeb/ProductMind.git
 cd productmind
 
 # frontend
 cd frontend
 npm install
-cp .env.example .env   # fill in your env vars
-npm run dev            # http://localhost:3000
+cp .env.example .env
+# edit .env with your values
+npm run dev              # http://localhost:3000
 
 # backend (separate terminal)
 cd backend
 npm install
 cp .env.example .env
-npm run dev            # http://localhost:5000
+# edit .env with your values
+npm run dev              # http://localhost:5000
 ```
 
-### Environment variables
+## Environment variables
 
-**Backend** (`backend/.env`):
+### Backend (`backend/.env`)
 
 | Variable | Required | Description |
 |---|---|---|
 | `MONGODB_URI` | Yes | MongoDB connection string |
 | `DATABASE_NAME` | Yes | Database name |
-| `GROQ_API_KEY` | Yes | Groq API key for AI features |
+| `GROQ_API_KEY` | Yes | Groq API key (AI features) |
+| `GEMINI_API_KEY` | No | Gemini API key (unused fallback) |
+| `SMTP_HOST` | For contact | SMTP server |
+| `SMTP_USER` | For contact | SMTP username |
+| `SMTP_PASS` | For contact | SMTP password |
+| `CONTACT_EMAIL` | For contact | Where contact form submissions go |
+| `PORT` | No | Defaults to 5000 |
 
-**Frontend** (`frontend/.env`):
+### Frontend (`frontend/.env`)
 
 | Variable | Required | Description |
 |---|---|---|
 | `BETTER_AUTH_URL` | Yes | Auth URL (usually `http://localhost:3000`) |
-| `BETTER_AUTH_SECRET` | Yes | Auth secret (generate via `npx auth secret`) |
+| `BETTER_AUTH_SECRET` | Yes | Run `npx auth secret` to generate one |
 | `NEXT_PUBLIC_BACKEND_URI` | Yes | Backend URL (`http://localhost:5000`) |
 | `UPLOADTHING_TOKEN` | For uploads | UploadThing API token |
 
 ## Scripts
 
-| Directory | Command | What it does |
+| Dir | Command | What it does |
 |---|---|---|
-| `frontend` | `npm run dev` | Start dev server on :3000 |
-| `frontend` | `npm run build` | Type-check + Turbopack build |
+| `frontend` | `npm run dev` | Dev server on :3000 |
+| `frontend` | `npm run build` | Type check + Turbopack build |
 | `frontend` | `npm run lint` | ESLint |
-| `backend` | `npm run dev` | Start dev server on :5000 (tsx watch) |
-| `backend` | `npm run build` | TypeScript compile to `dist/` |
+| `frontend` | `npm start` | Production server on :3000 |
+| `backend` | `npm run dev` | Dev server on :5000 (tsx watch) |
+| `backend` | `npm run build` | tsc to `dist/` |
+| `backend` | `npm start` | Run compiled `dist/server.js` |
 
 ## API overview
 
-All authenticated routes are behind `/api/backend-proxy` on the frontend. The Next.js proxy reads the session cookie and forwards the Bearer token to Express.
+All authenticated endpoints require a valid session. Frontend should call them through the backend proxy (`/api/backend-proxy/<path>`) — never directly. The proxy handles token forwarding server-side.
 
-| Endpoint | Method | Auth | Purpose |
-|---|---|---|---|
-| `/api/items` | GET | Yes | List items (paginated, searchable) |
-| `/api/items/:id` | GET / PUT / DELETE | Yes | CRUD single item |
-| `/api/upload/preview` | POST | Yes | Parse file, detect schema |
-| `/api/upload/confirm` | POST | Yes | Save parsed rows |
-| `/api/analytics/stats` | POST | Yes | Aggregated store stats |
-| `/api/analytics/insights` | POST | Yes | AI-generated insights |
-| `/api/content/generate` | POST | Yes | AI content generation |
-| `/api/chat/message` | POST | Yes | Chat with your store data |
-| `/api/chat/conversations` | GET / DELETE | Yes | Manage chat history |
-| `/api/contact` | POST | No | Contact form |
+Public endpoints:
 
-## Architecture notes
+| Method | Path | Purpose |
+|---|---|---|
+| POST | `/api/contact` | Contact form (saves to DB + sends email) |
+| GET | `/api/test` | Health check |
+| GET | `/health` | Health check |
 
-- **Auth**: BetterAuth runs server-side in Next.js. Express validates tokens by querying MongoDB `session` collection directly — it never creates sessions.
-- **Backend proxy**: Frontend services call `/api/backend-proxy/<endpoint>` instead of hitting Express directly. The proxy route reads the HttpOnly session cookie server-side and forwards the Bearer token. No client-side token juggling.
-- **AI**: All AI features (content generation, analytics insights, chat assistant) use Groq's OpenAI-compatible API. The `callLLM()` and `callLLMChat()` utilities in `backend/src/utils/llm.ts` handle API calls.
-- **Column mapping**: File uploads use rule-based schema detection (40+ known column name variants) with AI fallback via Groq for unmatched columns.
+Authenticated endpoints:
+
+| Method | Path | Purpose |
+|---|---|---|
+| POST | `/api/upload/preview` | Parse CSV/XLSX, detect schema, return preview |
+| POST | `/api/upload/confirm` | Accept mapping, save rows to `items` collection |
+| GET | `/api/items?page=&limit=&search=` | Paginated, searchable item list |
+| GET | `/api/items/:id` | Single item detail |
+| PUT | `/api/items/:id` | Update item fields |
+| DELETE | `/api/items/:id` | Delete item (owner-scoped) |
+| POST | `/api/analytics/stats` | Aggregated stats (revenue, counts, categories, trends) |
+| POST | `/api/analytics/insights` | AI-generated business insights (Groq) |
+| GET | `/api/dashboard/stats` | Dashboard summary counts |
+| POST | `/api/content/generate` | AI content generation (title, description, SEO, social) |
+| POST | `/api/content/save` | Persist generated content to item |
+| POST | `/api/chat/message` | Send message, get AI response with store context |
+| GET | `/api/chat/conversations` | List user's chat conversations |
+| GET | `/api/chat/conversations/:id` | Full conversation with messages |
+| DELETE | `/api/chat/conversations/:id` | Delete conversation |
+
+## Architecture
+
+**Auth flow.** BetterAuth lives in Next.js (`app/api/auth/[...all]/route.ts`). It creates sessions in MongoDB's `session` collection. The session token goes into an HttpOnly cookie (`better-auth.session_token`). The frontend never touches this cookie directly.
+
+**Backend proxy pattern.** Frontend services call `/api/backend-proxy/<endpoint>`. The proxy route in Next.js reads the session cookie server-side via `auth.api.getSession()`, extracts the token, and forwards it as `Authorization: Bearer <token>` to Express. This avoids CORS issues and keeps token handling out of client JS.
+
+**Express auth.** Express has its own auth middleware that validates the Bearer token by querying the MongoDB `session` collection. It never creates sessions — it's read-only on auth. The contact endpoint is registered before the auth middleware so it stays public.
+
+**Upload pipeline.** Files are uploaded via UploadThing to get a URL. That URL is sent to `/api/upload/preview`, which downloads the file, parses it (CSV via csv-parse, XLSX via the xlsx library), runs rule-based schema detection against 40+ known column name variants, and falls back to Groq for unmapped columns if confidence is below 80%. The user reviews the mapping, then `/api/upload/confirm` normalizes and inserts the rows.
+
+**AI features.** All AI runs through Groq's API (`llama-3.3-70b-versatile`) via two utilities in `backend/src/utils/llm.ts`: `callLLM()` for single-turn generation (content, insights) and `callLLMChat()` for multi-turn chat. AI does four things:
+1. Column mapping fallback when rules don't match
+2. Content generation (product titles, descriptions, SEO, social posts) with configurable length/tone
+3. Analytics insights — sends structured store data to Groq, gets back 5 business insights with confidence levels
+4. Chat assistant — streams store context (total items, revenue, top categories/products) into the system prompt so the model answers questions about the user's actual data
+
+**MongoDB collections.** `session` and `user` (BetterAuth), `items` (uploaded product data), `conversations` (chat history with messages), `contacts` (form submissions).
 
 ## Deployment
 
-- **Backend**: Deploy `backend/` to any Node.js host (Render, Railway, Fly.io). Set env vars, run `npm run build && npm start`.
-- **Frontend**: Deploy `frontend/` to Vercel. Set env vars, the build command is `npm run build`.
-- MongoDB: Atlas or any MongoDB-compatible host.
+**Frontend** goes to Vercel. Point it at `frontend/`, set the env vars (especially `BETTER_AUTH_SECRET`, `BETTER_AUTH_URL`, and `NEXT_PUBLIC_BACKEND_URI` pointing to the deployed backend). Build command: `cd frontend && npm run build`. The `backend-proxy` route needs to reach the backend — make sure the backend URL is accessible from Vercel's network.
+
+**Backend** can go to Render, Railway, Fly.io, or any Node.js host. Set env vars, then `npm run build && npm start`. The Express server is a standard Node process — Vercel also supports it via the `vercel.json` in `backend/` which deploys through `@vercel/node`.
+
+**MongoDB** — Atlas works fine. Just put the connection string in `MONGODB_URI`. The driver connects, creates collections on first write, no schema migrations needed.
+
+**UploadThing** needs the token set in both frontend and backend env vars. The frontend uploads files to UploadThing CDN, then passes the URL to the backend for processing.
