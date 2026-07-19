@@ -1,0 +1,16 @@
+Order ID,Product Name,Quantity,Unit Price,Revenue,Date,Category,Customer Email,Platform
+ORD-001,Wireless Bluetooth Headphones,2,79.99,159.98,2024-01-15,Electronics,john.doe@email.com,Shopify
+ORD-002,Yoga Mat Premium,1,45.00,45.00,2024-01-15,Fitness,sarah.wilson@email.com,WooCommerce
+ORD-003,Organic Green Tea 50-pack,3,12.99,38.97,2024-01-16,Grocery,alex.chen@email.com,Shopify
+ORD-004,Stainless Steel Water Bottle,4,24.50,98.00,2024-01-16,Home & Living,emma.jones@email.com,Amazon
+ORD-005,USB-C Charging Cable 6ft,10,8.99,89.90,2024-01-17,Electronics, mike.t@email.com,Shopify
+ORD-006,Cashmere Blend Scarf,2,34.99,69.98,2024-01-17,Fashion,linda.park@email.com,Etsy
+ORD-007,Sourdough Bread Starter Kit,1,28.50,28.50,2024-01-18,Food & Drinks,tom.baker@email.com,WooCommerce
+ORD-008,Desk LED Lamp Touch Control,3,39.99,119.97,2024-01-18,Office,rachel.green@email.com,Shopify
+ORD-009,Resistance Bands Set 5-pack,5,19.99,99.95,2024-01-19,Fitness,kevin.nguyen@email.com,Amazon
+ORD-010,French Press Coffee Maker,1,32.00,32.00,2024-01-19,Kitchen,maria.garcia@email.com,WooCommerce
+ORD-011,Leather Journal A5 Lined,6,14.99,89.94,2024-01-20,Stationery,james.wright@email.com,Etsy
+ORD-012,Noise Cancelling Earbuds,2,89.99,179.98,2024-01-20,Electronics,priya.sharma@email.com,Shopify
+ORD-013,Plant-Based Protein Powder 2lb,1,44.99,44.99,2024-01-21,Health,ryan.lee@email.com,Amazon
+ORD-014,Bamboo Cutting Board Set,3,27.99,83.97,2024-01-21,Kitchen,olivia.martinez@email.com,WooCommerce
+ORD-015,Scented Soy Candle Trio,4,18.50,74.00,2024-01-22,Home & Living,sophie.taylor@email.com,Etsy
