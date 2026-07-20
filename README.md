@@ -63,7 +63,6 @@ Upload store data, analyze sales, generate AI content, chat with your data.
 │       ├── server.ts            Entry point, middleware, route registration
 │       ├── db.ts                MongoDB connection singleton
 │       ├── routes/              Contact, upload, items, analytics, content, chat, dashboard
-│       ├── middleware/auth.ts   Token validation against MongoDB sessions
 │       ├── utils/               LLM client (Groq), CSV/XLSX parsers, schema detector
 │       └── types/               Shared interfaces
 │
@@ -168,7 +167,7 @@ Authenticated endpoints:
 
 **Backend proxy pattern.** Frontend services call `/api/backend-proxy/<endpoint>`. The proxy route in Next.js reads the session cookie server-side via `auth.api.getSession()`, extracts the token, and forwards it as `Authorization: Bearer <token>` to Express. This avoids CORS issues and keeps token handling out of client JS.
 
-**Express auth.** Express has its own auth middleware that validates the Bearer token by querying the MongoDB `session` collection. It never creates sessions — it's read-only on auth. The contact endpoint is registered before the auth middleware so it stays public.
+**Express auth.** Express has its own auth middleware that validates the Bearer token by querying the MongoDB `session` collection. It never creates sessions — it's read-only on auth. The middleware normalises the MongoDB document `_id` to `id` so all routes use a consistent `req.user.id`. The contact endpoint is registered before the auth middleware so it stays public.
 
 **Upload pipeline.** Files go to UploadThing, which returns a URL. That URL is sent to `/api/upload/preview`, which downloads the file (capped at 10MB, 10s timeout), parses it (CSV via csv-parse, XLSX via the xlsx library), runs rule-based schema detection against 40+ known column name variants, and falls back to Groq for unmapped columns if confidence is below 80%. The user reviews the mapping, then `/api/upload/confirm` re-downloads, normalises (dates are stored as ISODate objects), and bulk-inserts into the `items` collection.
 

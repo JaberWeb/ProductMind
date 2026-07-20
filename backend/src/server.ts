@@ -72,7 +72,15 @@ async function authMiddleware(req: any, res: any, next: any) {
     return;
   }
 
-  req.user = user;
+  req.user = {
+    id: user._id.toString(),
+    email: user.email,
+    name: user.name,
+    emailVerified: user.emailVerified ?? false,
+    image: user.image,
+    createdAt: user.createdAt,
+    updatedAt: user.updatedAt,
+  };
   next();
 }
 
